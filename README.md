@@ -1,6 +1,6 @@
 # Claude Code for founders
 
-138 entries · last verified 2026-09-09 · 138 links checked · 2 dead
+128 entries · last verified 2026-09-09 · 128 links checked · 0 dead
 
 One founder's working list of what actually helps when you run a company with Claude Code: the skills I install, the setups I copied, the rules I keep, and the people worth learning from. It is not a directory of everything that exists - if something is here, it earned its place in real work. Suggest a link by opening an issue (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 
@@ -37,7 +37,6 @@ Descriptions are my own notes where I wrote one. Where I only saved a link, the 
   - [Hooks](#hooks)
   - [Personal assistant](#personal-assistant)
 - [Tools and memory](#tools-and-memory)
-- [Prompt sources](#prompt-sources)
 - [n8n with Claude Code](#n8n-with-claude-code)
 - [How this list is built](#how-this-list-is-built)
 - [License](#license)
@@ -72,7 +71,6 @@ What I would send a founder who has one evening: my highest-rated picks and the 
 
 Videos and threads that taught me how Claude Code actually works - start here if you are new to it.
 
-- [@RoundtableSpace on X](https://x.com/RoundtableSpace/status/2076597439189111272) - Post on X.
 - [AI marketing Masterclass: From beginner to expert in 60 minutes](https://www.youtube.com/watch?v=fVUlrpaWNxg) - I sit down with James Dickerson, a growth marketer, Claude Code power user, and the mind behind The Boring Marketer, to watch him build an entire marketing system live from the terminal.
 - [Automate Your Life with Claude Code in 40 Minutes | Moritz Kremb](https://www.youtube.com/watch?v=ACRd0Ikg_KI) - The honest tradeoffs: OpenClaw vs. Claude Code.
 - [Build & Sell with Claude Code (10+ Hour Course)](https://www.youtube.com/watch?v=mpALXah_PBg) - This is the complete Claude Code course. Trust me, save this for later.
@@ -81,9 +79,6 @@ Videos and threads that taught me how Claude Code actually works - start here if
 - [CyrilXBT on X](https://x.com/cyrilXBT/status/2076353923695227108) - ANTHROPIC ENGINEER: "FABLE 5 IS ALREADY SMARTER THAN WE KNOW HOW TO USE. THE BOTTLENECK WAS NEVER THE AI. IT'S YOU." In 20 minutes he shows exactly how to build an agent that improves itself. No extra tools.
 - [Eyad Khrais - Claude Code Tutorial Thread](https://x.com/eyad_khrais/status/2010076957938188661) - Viral 4.8M-view thread by ex-Amazon/Disney/Capital One CTO breaking down Claude Code's three power features: Skills, Hooks, and Commands - with concrete examples for each.
 - [How to Make Claude Code Your AI Engineering Team](https://www.youtube.com/watch?v=wkv2ifxPpF8) - GStack is an open-source toolkit built by YC President & CEO Garry Tan that turns Claude Code into an AI engineering team - with skills for office hours, design, code review, QA, and browser testing.
-- [Instagram post DaA-8wLE2NX](https://www.instagram.com/p/DaA-8wLE2NX) - Instagram post.
-- [Instagram post DaqH6G0kn5P](https://www.instagram.com/p/DaqH6G0kn5P) - Instagram post.
-- [Instagram post DZzbZzVCCV](https://www.instagram.com/p/DZzbZzVCCV-?img_index=1) - Instagram post.
 - [The Four Agent Loops in Claude Code · TheVibeFounder](https://thevibefounder.com/r/loops) - Turn-based, goal-based, time-based, proactive. The four Claude Code agent loops, and how much you hand off at each rung.
 
 ## Agent teams and subagents
@@ -226,7 +221,6 @@ The skills I install, grouped by what they are for. Star counts and licenses com
 - [digitalsamba/claude-code-video-toolkit](https://github.com/digitalsamba/claude-code-video-toolkit) - Full AI-native video production workspace for Claude Code bundling skills, slash commands, templates, and tools covering the entire pipeline from narration and scoring to rendering and composition. · 2.1k stars · MIT · updated 2026-09
 - [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) - Write HTML and CSS to declaratively define animated video frames that render to MP4, purpose-built for AI agents that need to programmatically produce video without a GUI. · 47k stars · Apache-2.0 · updated 2026-09
 - [higgsfield-generate](https://github.com/higgsfield-ai/skills) - Gives Claude one-command generation across 30+ models - Nano Banana 2/Pro for images, Seedance 2.0 for video with native audio, plus Kling, Veo, GPT Image 2, 3D, and Marketing Studio - including image-to-video, reframe, and virality scoring. (official Higgsfield · uses your connected Higgsfield MCP/account) Why: Powers our creative AI guides, including the champagne video - one skill instead of five tabs. · 902 stars · MIT · updated 2026-08
-- [iamzhihuix/happy-claude-skills](https://github.com/iamzhihuix/happy-claude-skills) - A collection of Claude Code skills including a video-processor skill that chains FFmpeg and OpenAI Whisper to extract audio, transcribe speech, burn subtitles, and convert video formats entirely through natural language prompts.
 - [Nano Banana 2](https://github.com/kingbootoshi/nano-banana-2-skill) - AI image generation skill powered by Gemini 3 Pro; supports green-screen transparency, reference images, and style transfer directly inside Claude Code. · 408 stars · MIT · updated 2026-04
 - [Remotion best practices](https://github.com/remotion-dev/skills) - Deep knowledge of animations, timing, and audio sync so Claude can produce programmatic videos using React and Remotion with production-grade output. · 4.5k stars · updated 2026-09
 - [seedance-prompt-en](https://github.com/dexhunter/seedance2-skill) - Makes Claude an expert prompt engineer for Seedance 2.0, mastering the @ reference syntax, camera language, beat-matching, and shot structure to turn a rough idea into a precise, production-ready video prompt; built straight from ByteDance's official docs. (no key - pure prompt craft) Why: Pure prompt craft, no API key needed - the difference between a generic clip and a usable shot. · 3.5k stars · MIT · updated 2026-02
@@ -473,17 +467,6 @@ Memory plugins, usage meters and small utilities around Claude Code.
 - [rohitg00/agentmemory](https://github.com/rohitg00/agentmemory) - #1 Persistent memory for AI coding agents based on real-world benchmarks. · 28k stars · Apache-2.0 · updated 2026-09
 - [Usage for Claude](https://apps.apple.com/us/app/usage-for-claude/id6755173244) - macOS menu bar app that shows your Claude usage, from the App Store.
 
-## Prompt sources
-
-Posts and threads I mined for prompts worth stealing.
-
-- [Build mobile app](https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1) - Post on Threads.
-- [Claude Code SEO Prompts](https://www.instagram.com/p/DYdGvacErNf) - 5 SEO prompts from @youraicompass, shared as an Instagram post.
-- [Content management dashboard](https://www.instagram.com/p/DV9_kEmEVxM?img_index=2) - Instagram post.
-- [Instagram post DWfCQdLEjDL](https://www.instagram.com/p/DWfCQdLEjDL) - Instagram post.
-- [Marketing agency prompts](https://x.com/cyrilxbt/status/2042980564194521176) - Post on X by CyrilXBT.
-- [Social media growth strategy](https://www.instagram.com/p/DWHfrCHGc6r) - Instagram post.
-
 ## n8n with Claude Code
 
 Building n8n workflows from Claude Code - the MCP server and skills that make it work.
@@ -504,7 +487,7 @@ From there everything is automated and reproducible from this repo alone:
 
 Nothing in this README is edited by hand. Fixes go to `data/overrides.json` (keyed by the entry id in `data/links.csv`) and the next build picks them up.
 
-Current build: 138 entries in 9 sections, 139 field notes. Links checked: 138, dead: 2, last check: 2026-09-09. What the sync excluded and why is in `data/_report.md`.
+Current build: 128 entries in 8 sections, 139 field notes. Links checked: 128, dead: 0, last check: 2026-09-09. What the sync excluded and why is in `data/_report.md`.
 
 ## License
 

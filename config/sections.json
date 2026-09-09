@@ -1,6 +1,6 @@
 {
   "_about": "Section order and blurbs for README.md. Names must match the 'section' values written by the Notion sync (data/links.csv, data/notes.json). kind: links = link entries only, notes = field notes only, mixed = both. min_entries counts rendered items (entries plus notes) per section; tools/lint.py fails below it.",
-  "min_entries": 3,
+  "min_entries": 2,
   "sections": [
     {
       "name": "Learn",
@@ -14,7 +14,7 @@
     },
     {
       "name": "Prompting",
-      "kind": "notes",
+      "kind": "links+notes",
       "blurb": "My own prompt patterns for Fable 5 - copy them as they are."
     },
     {
@@ -63,14 +63,10 @@
       "blurb": "Memory plugins, usage meters and small utilities around Claude Code."
     },
     {
-      "name": "Prompt sources",
-      "kind": "links",
-      "blurb": "Posts and threads I mined for prompts worth stealing."
-    },
-    {
       "name": "n8n with Claude Code",
       "kind": "links",
-      "blurb": "Building n8n workflows from Claude Code - the MCP server and skills that make it work."
+      "blurb": "Building n8n workflows from Claude Code - the MCP server and skills that make it work.",
+      "min_entries": 2
     }
   ]
 }

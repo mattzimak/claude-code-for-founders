@@ -25,7 +25,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/gpt-tasteskill"
  },
@@ -40,7 +40,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/stitch-skill"
  },
@@ -104,36 +104,6 @@
   "status": "ok",
   "url": "https://github.com/ericosiu/ai-marketing-skills"
  },
- "1913a671": {
-  "archived": false,
-  "final_url": "https://www.instagram.com/p/DaqH6G0kn5P",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 200,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_title": "",
-  "pushed_at": "",
-  "stars": null,
-  "status": "ok",
-  "url": "https://www.instagram.com/p/DaqH6G0kn5P"
- },
- "1ca369c8": {
-  "archived": false,
-  "final_url": "https://x.com/cyrilxbt/status/2042980564194521176",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 200,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_author": "CyrilXBT",
-  "oembed_text": "https://t.co/P2lHgWsZ7a",
-  "oembed_title": "CyrilXBT on X",
-  "pushed_at": "",
-  "stars": null,
-  "status": "ok",
-  "url": "https://x.com/cyrilxbt/status/2042980564194521176"
- },
  "1da2583b": {
   "archived": false,
   "final_url": "https://github.com/Varnan-Tech/opendirectory/blob/main/skills/meta-ads-skill",
@@ -160,7 +130,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/redesign-skill"
  },
@@ -175,7 +145,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-08",
-  "stars": 123404,
+  "stars": 123403,
   "status": "ok",
   "url": "https://github.com/shadcn-ui/ui"
  },
@@ -190,7 +160,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-08",
-  "stars": 283353,
+  "stars": 283357,
   "status": "ok",
   "url": "https://github.com/obra/superpowers"
  },
@@ -220,7 +190,7 @@
   "license": "",
   "oembed_title": "",
   "pushed_at": "2026-09-03",
-  "stars": 175242,
+  "stars": 175243,
   "status": "ok",
   "url": "https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md"
  },
@@ -235,7 +205,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-05",
-  "stars": 48803,
+  "stars": 48805,
   "status": "ok",
   "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/ai-seo"
  },
@@ -250,7 +220,7 @@
   "license": "",
   "oembed_title": "",
   "pushed_at": "2026-09-03",
-  "stars": 175242,
+  "stars": 175243,
   "status": "ok",
   "url": "https://github.com/anthropics/skills/blob/main/skills/canvas-design/SKILL.md"
  },
@@ -268,20 +238,6 @@
   "stars": 34064,
   "status": "ok",
   "url": "https://github.com/JCodesMore/ai-website-cloner-template"
- },
- "2e3b5e58": {
-  "archived": false,
-  "final_url": "https://www.instagram.com/p/DaA-8wLE2NX",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 200,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_title": "",
-  "pushed_at": "",
-  "stars": null,
-  "status": "ok",
-  "url": "https://www.instagram.com/p/DaA-8wLE2NX"
  },
  "2f9d2670": {
   "archived": false,
@@ -341,7 +297,7 @@
   "license": "",
   "oembed_title": "",
   "pushed_at": "2026-09-03",
-  "stars": 175242,
+  "stars": 175243,
   "status": "ok",
   "url": "https://github.com/anthropics/skills/blob/main/skills/theme-factory/SKILL.md"
  },
@@ -417,7 +373,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/taste-skill"
  },
@@ -477,7 +433,7 @@
   "license": "",
   "oembed_title": "",
   "pushed_at": "2026-09-03",
-  "stars": 175242,
+  "stars": 175243,
   "status": "ok",
   "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design"
  },
@@ -530,7 +486,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit"
  },
@@ -681,24 +637,9 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-08",
-  "stars": 283353,
+  "stars": 283357,
   "status": "ok",
   "url": "https://github.com/obra/superpowers/tree/main/skills/using-git-worktrees"
- },
- "5729fc67": {
-  "archived": false,
-  "final_url": "https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 200,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_title": "",
-  "page_title": "Threads",
-  "pushed_at": "",
-  "stars": null,
-  "status": "ok",
-  "url": "https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1"
  },
  "586d93ec": {
   "also": {
@@ -718,7 +659,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-08",
-  "stars": 62995,
+  "stars": 62996,
   "status": "ok",
   "url": "https://github.com/diegosouzapw/OmniRoute"
  },
@@ -753,20 +694,6 @@
   "stars": null,
   "status": "ok",
   "url": "https://jeffallan.github.io/claude-skills/skills/quality/code-reviewer"
- },
- "5d471e2f": {
-  "archived": false,
-  "final_url": "https://www.instagram.com/p/DZzbZzVCCV-?img_index=1",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 200,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_title": "",
-  "pushed_at": "",
-  "stars": null,
-  "status": "ok",
-  "url": "https://www.instagram.com/p/DZzbZzVCCV-?img_index=1"
  },
  "5ec10adb": {
   "archived": false,
@@ -871,24 +798,9 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-05",
-  "stars": 48803,
+  "stars": 48805,
   "status": "ok",
   "url": "https://github.com/coreyhaines31/marketingskills"
- },
- "6b043a52": {
-  "archived": false,
-  "error": "gh: Not Found (HTTP 404)",
-  "final_url": "https://github.com/iamzhihuix/happy-claude-skills",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 404,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_title": "",
-  "pushed_at": "",
-  "stars": null,
-  "status": "dead",
-  "url": "https://github.com/iamzhihuix/happy-claude-skills"
  },
  "6e3c9515": {
   "archived": false,
@@ -947,23 +859,9 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/minimalist-skill"
- },
- "7593fe23": {
-  "archived": false,
-  "final_url": "https://www.instagram.com/p/DWfCQdLEjDL",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 200,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_title": "",
-  "pushed_at": "",
-  "stars": null,
-  "status": "ok",
-  "url": "https://www.instagram.com/p/DWfCQdLEjDL"
  },
  "78a658bc": {
   "also": {
@@ -1065,7 +963,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web"
  },
@@ -1122,7 +1020,7 @@
   "license": "Apache-2.0",
   "oembed_title": "",
   "pushed_at": "2026-09-08",
-  "stars": 47754,
+  "stars": 47755,
   "status": "ok",
   "url": "https://github.com/heygen-com/hyperframes"
  },
@@ -1164,7 +1062,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-05",
-  "stars": 48803,
+  "stars": 48805,
   "status": "ok",
   "url": "https://github.com/coreyhaines31/marketingskills/blob/main/skills/content-strategy/SKILL.md"
  },
@@ -1268,7 +1166,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-26",
-  "stars": 14750,
+  "stars": 14752,
   "status": "ok",
   "url": "https://github.com/AgriciDaniel/claude-obsidian"
  },
@@ -1283,7 +1181,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/image-to-code-skill"
  },
@@ -1329,7 +1227,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-05",
-  "stars": 48803,
+  "stars": 48805,
   "status": "ok",
   "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/seo-audit"
  },
@@ -1347,20 +1245,6 @@
   "stars": null,
   "status": "ok",
   "url": "https://www.reddit.com/r/ClaudeAI/comments/1r6cn6t/what_5_months_of_nonstop_claude_code_taught_me"
- },
- "a344ea51": {
-  "archived": false,
-  "final_url": "https://www.instagram.com/p/DWHfrCHGc6r",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 200,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_title": "",
-  "pushed_at": "",
-  "stars": null,
-  "status": "ok",
-  "url": "https://www.instagram.com/p/DWHfrCHGc6r"
  },
  "a483c841": {
   "archived": false,
@@ -1388,7 +1272,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/soft-skill"
  },
@@ -1418,7 +1302,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-05",
-  "stars": 48803,
+  "stars": 48805,
   "status": "ok",
   "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/lead-magnets"
  },
@@ -1433,7 +1317,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-05",
-  "stars": 48803,
+  "stars": 48805,
   "status": "ok",
   "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/emails"
  },
@@ -1493,7 +1377,7 @@
   "license": "",
   "oembed_title": "",
   "pushed_at": "2026-09-03",
-  "stars": 175242,
+  "stars": 175243,
   "status": "ok",
   "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing"
  },
@@ -1508,7 +1392,7 @@
   "license": "Apache-2.0",
   "oembed_title": "",
   "pushed_at": "2026-09-08",
-  "stars": 95827,
+  "stars": 95828,
   "status": "ok",
   "url": "https://github.com/microsoft/playwright"
  },
@@ -1554,7 +1438,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-07",
-  "stars": 132183,
+  "stars": 132189,
   "status": "ok",
   "url": "https://github.com/DietrichGebert/ponytail#install"
  },
@@ -1584,7 +1468,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-05",
-  "stars": 48803,
+  "stars": 48805,
   "status": "ok",
   "url": "https://github.com/coreyhaines31/marketingskills/blob/main/skills/ad-creative/SKILL.md"
  },
@@ -1603,20 +1487,6 @@
   "status": "ok",
   "url": "https://github.com/irinabuht12-oss/marketing-skills"
  },
- "b87d54fc": {
-  "archived": false,
-  "final_url": "https://www.instagram.com/p/DV9_kEmEVxM?img_index=2",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 200,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_title": "",
-  "pushed_at": "",
-  "stars": null,
-  "status": "ok",
-  "url": "https://www.instagram.com/p/DV9_kEmEVxM?img_index=2"
- },
  "b8da1063": {
   "archived": false,
   "final_url": "https://github.com/thedotmack/claude-mem",
@@ -1628,7 +1498,7 @@
   "license": "Apache-2.0",
   "oembed_title": "",
   "pushed_at": "2026-09-08",
-  "stars": 93496,
+  "stars": 93497,
   "status": "ok",
   "url": "https://github.com/thedotmack/claude-mem"
  },
@@ -1708,21 +1578,6 @@
   "status": "ok",
   "url": "https://github.com/AgriciDaniel/banana-claude"
  },
- "c497c30e": {
-  "archived": false,
-  "error": "oembed 404",
-  "final_url": "https://x.com/RoundtableSpace/status/2076597439189111272",
-  "full_name": "",
-  "gh_description": "",
-  "http_status": 404,
-  "last_checked": "2026-09-09",
-  "license": "",
-  "oembed_title": "",
-  "pushed_at": "",
-  "stars": null,
-  "status": "dead",
-  "url": "https://x.com/RoundtableSpace/status/2076597439189111272"
- },
  "c64f0a72": {
   "archived": false,
   "final_url": "https://jeffallan.github.io/claude-skills/skills/workflow/feature-forge/",
@@ -1750,7 +1605,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brutalist-skill"
  },
@@ -1765,7 +1620,7 @@
   "license": "",
   "oembed_title": "",
   "pushed_at": "2026-09-09",
-  "stars": 53713,
+  "stars": 53714,
   "status": "ok",
   "url": "https://github.com/hesreallyhim/awesome-claude-code"
  },
@@ -1780,7 +1635,7 @@
   "license": "",
   "oembed_title": "",
   "pushed_at": "2026-09-03",
-  "stars": 175242,
+  "stars": 175243,
   "status": "ok",
   "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines"
  },
@@ -1939,7 +1794,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill"
  },
@@ -2029,7 +1884,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-08",
-  "stars": 30720,
+  "stars": 30722,
   "status": "ok",
   "url": "https://github.com/vercel-labs/skills"
  },
@@ -2051,7 +1906,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-09-09",
-  "stars": 151025,
+  "stars": 151026,
   "status": "ok",
   "url": "https://github.com/msitarzewski/agency-agents"
  },
@@ -2097,7 +1952,7 @@
   "license": "MIT",
   "oembed_title": "",
   "pushed_at": "2026-08-24",
-  "stars": 85468,
+  "stars": 85469,
   "status": "ok",
   "url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile"
  },
@@ -2112,7 +1967,7 @@
   "license": "Apache-2.0",
   "oembed_title": "",
   "pushed_at": "2026-09-09",
-  "stars": 66595,
+  "stars": 66596,
   "status": "ok",
   "url": "https://github.com/pbakaus/impeccable"
  },

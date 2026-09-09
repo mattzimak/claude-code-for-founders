@@ -4,18 +4,18 @@ Source page: `2f6daecfce6b80088d45ca8548bba01b` - generated 2026-09-09. Block id
 
 ## Counts
 
-- entries: 138
+- entries: 128
   - Agent teams and subagents: 3
   - Collections: 5
   - Field notes / Context: 1
   - Field notes / General best practices: 2
   - Field notes / Hooks: 1
   - Field notes / Personal assistant: 1
-  - Learn: 13
-  - Prompt sources: 6
+  - Learn: 9
+  - Prompt sources: 1
   - Skills / Development: 15
   - Skills / General: 11
-  - Skills / Image & Video Editing: 10
+  - Skills / Image & Video Editing: 9
   - Skills / Marketing - Ads & SEO: 15
   - Skills / Marketing - Content & Writing: 4
   - Skills / Project management: 1
@@ -240,8 +240,18 @@ Blocks forced private by config (private_block_ids):
   - claude.md (342daecf-ce6b-80f9-b612-ef32ff2a6d30, Field notes)
   - claude.md (31bdaecf-ce6b-80a1-9b1c-f4294fa11cda, n8n with Claude Code)
   - claude.md (31bdaecf-ce6b-8087-af4b-ea99a723254b, n8n with Claude Code)
-- config-exclude_urls: 3
+- config-exclude_urls: 19
+  - https://x.com/RoundtableSpace/status/2076597439189111272 (39edaecf-ce6b-80ee-a365-d82c4045f9fd, Learn)
+  - https://github.com/iamzhihuix/happy-claude-skills (a0187d62-1a98-4220-a443-d27c1f45b1ed, Skills)
   - https://github.com/ggerganov/whisper.cpp (353daecf-ce6b-80c8-9e34-f3cecc6c0fdf, Skills)
+  - https://www.instagram.com/p/DaqH6G0kn5P (39cdaecf-ce6b-80a3-acd8-de81e841c9bf, Learn)
+  - https://www.instagram.com/p/DZzbZzVCCV-?img_index=1 (38fdaecf-ce6b-80cc-9e31-fe5dbf1403a2, Learn)
+  - https://www.instagram.com/p/DaA-8wLE2NX (38edaecf-ce6b-80b3-98e6-e79c20db7b22, Learn)
+  - https://www.instagram.com/p/DV9_kEmEVxM?img_index=2 (326daecf-ce6b-809a-9878-d097d46d9df4, Prompt sources)
+  - https://x.com/cyrilxbt/status/2042980564194521176 (342daecf-ce6b-8009-ab20-fd4ebaa8e1ef, Prompt sources)
+  - https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1 (32cdaecf-ce6b-805a-94d9-fd0feb2bdbe8, Prompt sources)
+  - https://www.instagram.com/p/DWHfrCHGc6r (336daecf-ce6b-80b0-8b59-d866a6c29f01, Prompt sources)
+  - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949, Prompt sources)
   - https://codexbar.app (349daecf-ce6b-80db-a56d-c2f149efc38c, Tools and memory)
 - email-tracking-redirect: 2
   - elinkb7e.mail.aiwithremy.com (355daecf-ce6b-803a-aedc-e25f91ddd717, Field notes)
@@ -266,8 +276,24 @@ Blocks forced private by config (private_block_ids):
   - www.skool.com (353daecf-ce6b-803b-a114-e3d7b235952d, Skills)
 - non-github URLs dropped inside links-only-github subtrees (by host): airtable.com x1, apify.com x2, facebook.com x1, www.kieranflanagan.io x1, www.linkedin.com x1
 - config exclude_urls hits:
+  - https://x.com/RoundtableSpace/status/2076597439189111272 (39edaecf-ce6b-80ee-a365-d82c4045f9fd)
+  - https://github.com/iamzhihuix/happy-claude-skills (a0187d62-1a98-4220-a443-d27c1f45b1ed)
   - https://github.com/ggerganov/whisper.cpp (353daecf-ce6b-80c8-9e34-f3cecc6c0fdf)
   - https://github.com/ggerganov/whisper.cpp (353daecf-ce6b-80c8-9e34-f3cecc6c0fdf)
+  - https://www.instagram.com/p/DaqH6G0kn5P (39cdaecf-ce6b-80a3-acd8-de81e841c9bf)
+  - https://www.instagram.com/p/DaqH6G0kn5P (39cdaecf-ce6b-80a3-acd8-de81e841c9bf)
+  - https://www.instagram.com/p/DZzbZzVCCV-?img_index=1 (38fdaecf-ce6b-80cc-9e31-fe5dbf1403a2)
+  - https://www.instagram.com/p/DZzbZzVCCV-?img_index=1 (38fdaecf-ce6b-80cc-9e31-fe5dbf1403a2)
+  - https://www.instagram.com/p/DaA-8wLE2NX (38edaecf-ce6b-80b3-98e6-e79c20db7b22)
+  - https://www.instagram.com/p/DaA-8wLE2NX (38edaecf-ce6b-80b3-98e6-e79c20db7b22)
+  - https://www.instagram.com/p/DV9_kEmEVxM?img_index=2 (326daecf-ce6b-809a-9878-d097d46d9df4)
+  - https://x.com/cyrilxbt/status/2042980564194521176 (342daecf-ce6b-8009-ab20-fd4ebaa8e1ef)
+  - https://x.com/cyrilxbt/status/2042980564194521176 (342daecf-ce6b-8009-ab20-fd4ebaa8e1ef)
+  - https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1 (32cdaecf-ce6b-805a-94d9-fd0feb2bdbe8)
+  - https://www.instagram.com/p/DWHfrCHGc6r (336daecf-ce6b-80b0-8b59-d866a6c29f01)
+  - https://www.instagram.com/p/DWHfrCHGc6r (336daecf-ce6b-80b0-8b59-d866a6c29f01)
+  - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949)
+  - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949)
   - https://codexbar.app (349daecf-ce6b-80db-a56d-c2f149efc38c)
 
 ## Entries missing a description (Notion text)
@@ -277,11 +303,7 @@ Blocks forced private by config (private_block_ids):
 - Collections: jeffallan.github.io/claude-skills - https://jeffallan.github.io/claude-skills/skills-guide (34fdaecf-ce6b-8035-9a69-fecbafd89a9b)
 - Field notes / Context: plugin for memory - https://github.com/supermemoryai/claude-supermemory (32cdaecf-ce6b-8056-82a5-e8480b62abea)
 - Field notes / Personal assistant: Memory - https://www.reddit.com/r/ClaudeAI/comments/1r66oo0/how_i_structure_claude_code_projects_claudemd (342daecf-ce6b-80d6-8b10-de827d12e74c)
-- Learn: @RoundtableSpace on X - https://x.com/RoundtableSpace/status/2076597439189111272 (39edaecf-ce6b-80ee-a365-d82c4045f9fd)
 - Learn: @cyrilXBT on X - https://x.com/cyrilXBT/status/2076353923695227108 (39edaecf-ce6b-8048-b9c8-d9efc1be1ded)
-- Learn: Instagram post DZzbZzVCCV - https://www.instagram.com/p/DZzbZzVCCV-?img_index=1 (38fdaecf-ce6b-80cc-9e31-fe5dbf1403a2)
-- Learn: Instagram post DaA-8wLE2NX - https://www.instagram.com/p/DaA-8wLE2NX (38edaecf-ce6b-80b3-98e6-e79c20db7b22)
-- Learn: Instagram post DaqH6G0kn5P - https://www.instagram.com/p/DaqH6G0kn5P (39cdaecf-ce6b-80a3-acd8-de81e841c9bf)
 - Learn: YouTube video ACRd0Ikg_KI - https://www.youtube.com/watch?v=ACRd0Ikg_KI (363daecf-ce6b-805d-8fc7-effd1507d619)
 - Learn: YouTube video RAZVk5NPNtE - https://www.youtube.com/watch?v=RAZVk5NPNtE (342daecf-ce6b-80b4-b625-f43e9619a0de)
 - Learn: YouTube video ZAaxx3qyT8g - https://www.youtube.com/watch?v=ZAaxx3qyT8g (36edaecf-ce6b-801e-9cbd-ddaa6c31d5dc)
@@ -289,11 +311,6 @@ Blocks forced private by config (private_block_ids):
 - Learn: YouTube video mpALXah_PBg - https://www.youtube.com/watch?v=mpALXah_PBg (33bdaecf-ce6b-800c-ad4f-c61afcc9450a)
 - Learn: YouTube video wkv2ifxPpF8 - https://www.youtube.com/watch?v=wkv2ifxPpF8 (355daecf-ce6b-80d0-8ef5-ca8eceea0abb)
 - Learn: thevibefounder.com/r - https://thevibefounder.com/r/loops (39cdaecf-ce6b-8046-8b8e-d2e2c21143fa)
-- Prompt sources: Build mobile app - https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1 (32cdaecf-ce6b-805a-94d9-fd0feb2bdbe8)
-- Prompt sources: Content management dashboard - https://www.instagram.com/p/DV9_kEmEVxM?img_index=2 (326daecf-ce6b-809a-9878-d097d46d9df4)
-- Prompt sources: Instagram post DWfCQdLEjDL - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949)
-- Prompt sources: Marketing agency prompts - https://x.com/cyrilxbt/status/2042980564194521176 (342daecf-ce6b-8009-ab20-fd4ebaa8e1ef)
-- Prompt sources: Social media growth strategy - https://www.instagram.com/p/DWHfrCHGc6r (336daecf-ce6b-80b0-8b59-d866a6c29f01)
 - Skills / Marketing - Ads & SEO: Marketingskills/Lead Magnets - https://github.com/coreyhaines31/marketingskills/tree/main/skills/lead-magnets (356daecf-ce6b-80c0-a405-fd4eb9c116c1)
 - Skills / Token burn & models: Omniroute - https://github.com/diegosouzapw/OmniRoute (3a9daecf-ce6b-80ee-9e83-fa34ee3a3e09)
 - Tools and memory: anthropics/claude-code - https://github.com/anthropics/claude-code (394daecf-ce6b-8095-a378-e5dc298f271a)
@@ -305,7 +322,6 @@ Blocks forced private by config (private_block_ids):
 - YouTube video ACRd0Ikg_KI - https://www.youtube.com/watch?v=ACRd0Ikg_KI (363daecf-ce6b-805d-8fc7-effd1507d619)
 - YouTube video fVUlrpaWNxg - https://www.youtube.com/watch?v=fVUlrpaWNxg (342daecf-ce6b-8034-95dd-efc2f6ed9116)
 - YouTube video mpALXah_PBg - https://www.youtube.com/watch?v=mpALXah_PBg (33bdaecf-ce6b-800c-ad4f-c61afcc9450a)
-- @RoundtableSpace on X - https://x.com/RoundtableSpace/status/2076597439189111272 (39edaecf-ce6b-80ee-a365-d82c4045f9fd)
 - YouTube video RAZVk5NPNtE - https://www.youtube.com/watch?v=RAZVk5NPNtE (342daecf-ce6b-80b4-b625-f43e9619a0de)
 - YouTube video wkv2ifxPpF8 - https://www.youtube.com/watch?v=wkv2ifxPpF8 (355daecf-ce6b-80d0-8ef5-ca8eceea0abb)
 - YouTube video ZAaxx3qyT8g - https://www.youtube.com/watch?v=ZAaxx3qyT8g (36edaecf-ce6b-801e-9cbd-ddaa6c31d5dc)
@@ -313,13 +329,9 @@ Blocks forced private by config (private_block_ids):
 - theaileverage.beehiiv.com/p - https://theaileverage.beehiiv.com/p/top-5-claude-code-front-end-skills (35fdaecf-ce6b-8076-8bc7-f248b6a47d84)
 - jeffallan.github.io/claude-skills - https://jeffallan.github.io/claude-skills/skills-guide (34fdaecf-ce6b-8035-9a69-fecbafd89a9b)
 - thevibefounder.com/r - https://thevibefounder.com/r/loops (39cdaecf-ce6b-8046-8b8e-d2e2c21143fa)
-- Instagram post DaqH6G0kn5P - https://www.instagram.com/p/DaqH6G0kn5P (39cdaecf-ce6b-80a3-acd8-de81e841c9bf)
-- Instagram post DZzbZzVCCV - https://www.instagram.com/p/DZzbZzVCCV-?img_index=1 (38fdaecf-ce6b-80cc-9e31-fe5dbf1403a2)
-- Instagram post DaA-8wLE2NX - https://www.instagram.com/p/DaA-8wLE2NX (38edaecf-ce6b-80b3-98e6-e79c20db7b22)
 - rohitg00/agentmemory - https://github.com/rohitg00/agentmemory (396daecf-ce6b-8037-8252-c0b36b847d3e)
 - anthropics/claude-code - https://github.com/anthropics/claude-code (394daecf-ce6b-8095-a378-e5dc298f271a)
 - YouTube video O2k_qwZA8HU - https://www.youtube.com/watch?v=O2k_qwZA8HU (33adaecf-ce6b-8013-90f1-e157391faa33)
-- Instagram post DWfCQdLEjDL - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949)
 - steipete/CodexBar (CodexBar-0.22.zip) - https://github.com/steipete/CodexBar/releases/download/v0.22/CodexBar-0.22.zip (349daecf-ce6b-80f3-a0ed-de4aee7469eb)
 - apps.apple.com/us - https://apps.apple.com/us/app/usage-for-claude/id6755173244 (349daecf-ce6b-801a-a9b3-defb06a07c2a)
 
@@ -359,15 +371,4 @@ Blocks forced private by config (private_block_ids):
 
 Refreshed by every `python3 tools/lint.py` run. Each line needs a human decision: fix it in `data/overrides.json` (name, description, url) or change the source in Notion, then re-sync.
 
-- dead link: @RoundtableSpace on X -> https://x.com/RoundtableSpace/status/2076597439189111272 (http 404, oembed 404) [id c497c30e]
-- dead link: iamzhihuix/happy-claude-skills -> https://github.com/iamzhihuix/happy-claude-skills (http 404, gh: Not Found (HTTP 404)) [id 6b043a52]
-- short description (9 chars): @RoundtableSpace on X -> 'Post on X' [id c497c30e]
-- short description (14 chars): Instagram post DaA-8wLE2NX -> 'Instagram post' [id 2e3b5e58]
-- short description (14 chars): Instagram post DaqH6G0kn5P -> 'Instagram post' [id 1913a671]
-- short description (14 chars): Instagram post DZzbZzVCCV -> 'Instagram post' [id 5d471e2f]
-- short description (15 chars): Build mobile app -> 'Post on Threads' [id 5729fc67]
-- short description (14 chars): Content management dashboard -> 'Instagram post' [id b87d54fc]
-- short description (14 chars): Instagram post DWfCQdLEjDL -> 'Instagram post' [id 7593fe23]
-- short description (21 chars): Marketing agency prompts -> 'Post on X by CyrilXBT' [id 1ca369c8]
-- short description (14 chars): Social media growth strategy -> 'Instagram post' [id a344ea51]
-- section 'n8n with Claude Code' has 2 items (entries 2 + notes 0), minimum is 3
+- section 'Prompt sources' exists in data/ but not in config/sections.json (not rendered)
