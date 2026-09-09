@@ -5,9 +5,12 @@ Inputs
   data/links.csv          one row per link (from the Notion sync)
   data/notes.json         field notes grouped by section / subsection (from the Notion sync)
   data/enrichment.json    stars, license, last push, titles, link status (from tools/enrich.py; optional)
-  data/overrides.json     {"<id>": {"name": ..., "description": ..., "url": ..., "why": ..., "install": ...}}
-  config/sections.json    section order, blurbs, subsection order, min_entries
+  data/overrides.json     {"<id>": {"name": ..., "description": ..., "url": ..., "why": ..., "install": ..., "hide": true}}
+                          hide: true keeps the row in data/ but out of every rendered file (say why in "_why")
+  config/sections.json    section order, blurbs, subsection order, min_entries (global, or per section),
+                          optional notes_file + notes_index (see --notes-file below)
   templates/README.template.md   placeholders: {{header_line}} {{toc}} {{start_here}} {{sections}} {{stats}}
+  templates/FIELD-NOTES.template.md   placeholders: {{header_line}} {{toc}} {{sections}} (only with a notes file)
 
 Rules
   - name: override > oEmbed/page title when the sync could only name the entry from its URL > sync name
@@ -18,8 +21,12 @@ Rules
     missing fields are simply omitted
   - entries sorted by name inside each section; 'Start here' = rating >= 8 or a Why, sorted by rating
   - no timestamps of its own: the only date is the last link check, so two runs give the same file
-Stdlib only, Python 3.9+. Run from the repo root: python3 tools/build.py
+  - --notes-file FIELD-NOTES.md (or "notes_file" in config/sections.json): every note goes to that file, grouped by
+    section and subsection; README.md keeps the link entries, one pointer line per section that has notes, and an
+    index of the notes file inside the section named by "notes_index". Off by default: README.md is unchanged.
+Stdlib only, Python 3.9+. Run from the repo root: python3 tools/build.py [--notes-file FIELD-NOTES.md]
 """
+import argparse
 import csv
 import json
 import os
@@ -35,6 +42,7 @@ P = {
     "overrides": os.path.join(ROOT, "data", "overrides.json"),
     "config": os.path.join(ROOT, "config", "sections.json"),
     "template": os.path.join(ROOT, "templates", "README.template.md"),
+    "notes_template": os.path.join(ROOT, "templates", "FIELD-NOTES.template.md"),
     "readme": os.path.join(ROOT, "README.md"),
 }
 MIN_DESC = 30
@@ -201,6 +209,8 @@ def resolve(rows, enrich, overrides):
     for row in rows:
         enr = enrich.get(row["id"]) or {}
         ov = overrides.get(row["id"]) or {}
+        if ov.get("hide"):
+            continue  # hidden by hand (data/overrides.json "hide": true) - stays in data/ for the record
         url = ov.get("url") or row["url"]
         if not ov.get("url") and enr.get("status") == "redirected" and host_of(url) == "github.com" \
                 and enr.get("final_url") and host_of(enr["final_url"]) == "github.com":
@@ -335,9 +345,11 @@ def render_notes(items, base_indent, skip_root=True):
     return lines, count
 
 
-def render_group(entries, notes, base_indent=0):
-    """Entries (sorted by name) with their attached notes, then the free-standing notes. Returns (lines, n_entries, n_notes)."""
-    lines, n_notes = [], 0
+def render_group(entries, notes, base_indent=0, split=False):
+    """Entries (sorted by name) with their attached notes, then the free-standing notes.
+    Returns (lines, note_lines, n_entries, n_notes). With split=True every note goes to note_lines (the notes file);
+    lines then carries the entry lines only."""
+    lines, note_lines, n_notes = [], [], 0
     by_entry = {}
     free = []
     for n in notes:
@@ -354,26 +366,35 @@ def render_group(entries, notes, base_indent=0):
             else:
                 free.extend(ns)
             del by_entry[eid]
+    target = note_lines if split else lines
     for e in sorted(entries, key=lambda x: (x["name"].casefold(), x["url"])):
         lines.append(" " * base_indent + entry_line(e))
         if e["id"] in by_entry:
+            if split:
+                target.append(" " * base_indent + "- [%s](%s):" % (esc(e["name"]), e["url"]))
             sub, c = render_notes(by_entry[e["id"]], base_indent + 2, skip_root=False)
-            lines += sub
+            target += sub
             n_notes += c
     for ref, ns in sorted(pointers, key=lambda p: p[0]["name"].casefold()):
         where = ref["section"] + (" / " + ref["subsection"] if ref["subsection"] else "")
-        lines.append(" " * base_indent + "- [%s](%s) - my notes on it; the entry itself is under %s:" % (esc(ref["name"]), ref["url"], where))
+        target.append(" " * base_indent + "- [%s](%s) - my notes on it; the entry itself is under %s:" % (esc(ref["name"]), ref["url"], where))
         sub, c = render_notes(ns, base_indent + 2, skip_root=False)
-        lines += sub
+        target += sub
         n_notes += c + 1
     free_lines, c = render_notes(free, base_indent)
-    lines += free_lines
+    target += free_lines
     n_notes += c
-    return lines, len(entries), n_notes
+    return lines, note_lines, len(entries), n_notes
 
 
-def build():
+def build(notes_file=None):
+    """Render README.md (and the notes file when one is configured). Returns (readme, notes_doc, stats, entries);
+    notes_doc is "" when no notes file is in use."""
     rows, notes, enrich, overrides, config, template = load_all()
+    if notes_file is None:
+        notes_file = config.get("notes_file") or ""
+    split = bool(notes_file)
+    notes_index = config.get("notes_index", "") if split else ""
     NOTE_OVERRIDES.clear()
     NOTE_OVERRIDES.update(overrides.get("_notes") or {})
     entries = resolve(rows, enrich, overrides)
@@ -394,33 +415,92 @@ def build():
         start_lines += [entry_line(e, with_section=True) for e in start]
 
     known = {s["name"] for s in cfg_sections}
+    per = []  # one record per section: rendered README lines, notes-file lines, the subsections shown in each
     for sec in cfg_sections:
         name = sec["name"]
         sec_entries = [e for e in entries if e["section"] == name]
         sec_notes = notes.get(name, {})
-        headings.append(name)
-        body += ["## " + name, "", sec.get("blurb", "").strip(), ""]
         subs_present = sorted({e["subsection"] for e in sec_entries if e["subsection"]} | {k for k in sec_notes if k})
         order = [s for s in sec.get("subsections", []) if s in subs_present] + \
                 [s for s in subs_present if s not in sec.get("subsections", [])]
-        n_e = n_n = 0
+        rec = {"name": name, "blurb": sec.get("blurb", "").strip(), "readme": [], "notes": [],
+               "subs_readme": [], "subs_notes": [], "n_e": 0, "n_n": 0}
         # ungrouped content first (subsection "")
-        lines, a, b = render_group([e for e in sec_entries if not e["subsection"]], sec_notes.get("", []))
-        body += lines
-        n_e += a
-        n_n += b
+        lines, nlines, a, b = render_group([e for e in sec_entries if not e["subsection"]], sec_notes.get("", []), split=split)
+        rec["readme"] += lines
         if lines:
-            body.append("")
+            rec["readme"].append("")
+        rec["notes"] += nlines
+        if nlines:
+            rec["notes"].append("")
+        rec["n_e"] += a
+        rec["n_n"] += b
         for sub in order:
-            headings.append(sub)
-            body += ["### " + sub, ""]
-            lines, a, b = render_group([e for e in sec_entries if e["subsection"] == sub], sec_notes.get(sub, []))
-            body += lines
+            lines, nlines, a, b = render_group([e for e in sec_entries if e["subsection"] == sub], sec_notes.get(sub, []), split=split)
+            if lines or not split:  # with a notes file, a subsection made of notes only lives in that file
+                rec["subs_readme"].append(sub)
+                rec["readme"] += ["### " + sub, ""] + lines + [""]
+            if nlines:
+                rec["subs_notes"].append(sub)
+                rec["notes"] += ["### " + sub, ""] + nlines + [""]
+            rec["n_e"] += a
+            rec["n_n"] += b
+        per.append(rec)
+        stats["sections"][name] = {"entries": rec["n_e"], "notes": rec["n_n"], "items": rec["n_e"] + rec["n_n"]}
+        stats["notes"] += rec["n_n"]
+
+    # the notes file: sections in README order, only those that have notes
+    notes_doc = ""
+    notes_anchor = {}
+    if split:
+        with open(P["notes_template"], encoding="utf-8") as f:
+            notes_template = f.read()
+        nheadings = ["Contents"]
+        nbody = []
+        for rec in per:
+            if not rec["notes"]:
+                continue
+            nheadings.append(rec["name"])
+            nheadings += rec["subs_notes"]
+            nbody += ["## " + rec["name"], "",
+                      "Links for this section are in [README.md](README.md#%s)." % anchor(rec["name"]), ""] + rec["notes"]
+        nanchors = anchors_for(nheadings)
+        pos = 1
+        ntoc = []
+        for rec in per:
+            if not rec["notes"]:
+                continue
+            notes_anchor[rec["name"]] = nanchors[pos]
+            ntoc.append("- [%s](#%s) (%d notes)" % (rec["name"], nanchors[pos], rec["n_n"]))
+            pos += 1
+            for sub in rec["subs_notes"]:
+                ntoc.append("  - [%s](#%s)" % (sub, nanchors[pos]))
+                pos += 1
+        n_secs = len(notes_anchor)
+        notes_header = "%d notes in %d sections · built from the same data as README.md" % (stats["notes"], n_secs)
+        notes_doc = notes_template
+        notes_doc = notes_doc.replace("{{header_line}}", notes_header)
+        notes_doc = notes_doc.replace("{{toc}}", "\n".join(ntoc))
+        notes_doc = notes_doc.replace("{{sections}}", "\n".join(nbody).rstrip())
+        notes_doc = re.sub(r"\n{3,}", "\n\n", notes_doc).rstrip() + "\n"
+        stats["notes_sections"] = n_secs
+
+    for rec in per:
+        name = rec["name"]
+        headings.append(name)
+        body += ["## " + name, "", rec["blurb"], ""]
+        if split and name == notes_index and notes_anchor:
+            body.append("Everything I wrote down, grouped by section, lives in [%s](%s):" % (notes_file, notes_file))
             body.append("")
-            n_e += a
-            n_n += b
-        stats["sections"][name] = {"entries": n_e, "notes": n_n, "items": n_e + n_n}
-        stats["notes"] += n_n
+            for r2 in per:
+                if r2["notes"]:
+                    body.append("- [%s](%s#%s) - %d notes" % (r2["name"], notes_file, notes_anchor[r2["name"]], r2["n_n"]))
+            body.append("")
+        body += rec["readme"]
+        headings += rec["subs_readme"]
+        if split and rec["notes"] and name != notes_index:
+            body.append("My notes on this section: [%s](%s#%s) (%d notes)." % (name, notes_file, notes_anchor[name], rec["n_n"]))
+            body.append("")
         if body and body[-1] != "":
             body.append("")
     for e in entries:
@@ -438,15 +518,10 @@ def build():
     if start:
         toc.append("- [Start here](#%s)" % ordered_anchors[pos])
         pos += 1
-    for sec in cfg_sections:
-        toc.append("- [%s](#%s)" % (sec["name"], ordered_anchors[pos]))
+    for rec in per:
+        toc.append("- [%s](#%s)" % (rec["name"], ordered_anchors[pos]))
         pos += 1
-        sec_entries = [e for e in entries if e["section"] == sec["name"]]
-        sec_notes = notes.get(sec["name"], {})
-        subs_present = sorted({e["subsection"] for e in sec_entries if e["subsection"]} | {k for k in sec_notes if k})
-        order = [s for s in sec.get("subsections", []) if s in subs_present] + \
-                [s for s in subs_present if s not in sec.get("subsections", [])]
-        for sub in order:
+        for sub in rec["subs_readme"]:
             toc.append("  - [%s](#%s)" % (sub, ordered_anchors[pos]))
             pos += 1
     toc.append("- [How this list is built](#%s)" % ordered_anchors[pos])
@@ -461,7 +536,9 @@ def build():
         header = "%d entries · links not verified yet (run tools/enrich.py)" % len(entries)
     stats_line = "Current build: %d entries in %d sections, %d field notes. Links checked: %d, dead: %d, last check: %s. What the sync excluded and why is in `data/_report.md`." % (
         len(entries), len(cfg_sections), stats["notes"], len(checked), dead, last or "never")
-    stats.update(header=header, checked=len(checked), dead=dead, last_checked=last)
+    if split:
+        stats_line += " The field notes are rendered into `%s` by the same build." % notes_file
+    stats.update(header=header, checked=len(checked), dead=dead, last_checked=last, notes_file=notes_file)
 
     out = template
     out = out.replace("{{header_line}}", header)
@@ -470,14 +547,24 @@ def build():
     out = out.replace("{{sections}}", "\n".join(body).rstrip())
     out = out.replace("{{stats}}", stats_line)
     out = re.sub(r"\n{3,}", "\n\n", out).rstrip() + "\n"
-    return out, stats, entries
+    return out, notes_doc, stats, entries
 
 
 def main():
-    text, stats, _ = build()
+    ap = argparse.ArgumentParser(description="Render README.md from data/ (see the module docstring).")
+    ap.add_argument("--notes-file", default=None, metavar="FILE",
+                    help="write every note to FILE (relative to the repo root) and keep only pointers in README.md; "
+                         "default: 'notes_file' from config/sections.json, else off")
+    args = ap.parse_args()
+    text, notes_doc, stats, _ = build(args.notes_file)
     with open(P["readme"], "w", encoding="utf-8") as f:
         f.write(text)
+    if stats.get("notes_file"):
+        with open(os.path.join(ROOT, stats["notes_file"]), "w", encoding="utf-8") as f:
+            f.write(notes_doc)
     print("build: %s -> README.md" % stats["header"])
+    if stats.get("notes_file"):
+        print("  notes -> %s (%d notes in %d sections)" % (stats["notes_file"], stats["notes"], stats.get("notes_sections", 0)))
     for name, s in stats["sections"].items():
         print("  %-28s entries=%-3d notes=%d" % (name, s["entries"], s["notes"]))
     if stats["unlisted_sections"]:
