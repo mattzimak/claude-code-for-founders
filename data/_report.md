@@ -4,15 +4,15 @@ Source page: `2f6daecfce6b80088d45ca8548bba01b` - generated 2026-09-09. Block id
 
 ## Counts
 
-- entries: 128
+- entries: 135
   - Agent teams and subagents: 3
   - Collections: 5
   - Field notes / Context: 1
   - Field notes / General best practices: 2
   - Field notes / Hooks: 1
   - Field notes / Personal assistant: 1
-  - Learn: 9
-  - Prompting: 1
+  - Learn: 12
+  - Prompting: 5
   - Skills / Development: 15
   - Skills / General: 11
   - Skills / Image & Video Editing: 9
@@ -94,8 +94,8 @@ Source page: `2f6daecfce6b80088d45ca8548bba01b` - generated 2026-09-09. Block id
 - Tools and memory > anthropics/claude-code comes from the toggle 'Install Context7 MCP for docu', which links the Claude Code repository rather than Context7 - relink in Notion (github.com/upstash/context7) or drop the toggle.
 - Token burn & models > Omniroute is still listed in Notion although the workspace assessment concluded it is not worth installing - keep or remove at the source.
 - agentmatik.ai/llms-full.txt links emil-design-eng to github.com/emilkowalski/skill (the repository is now /skills); the sync follows the redirect, but the site should be corrected.
-- Learn and Prompt sources: Instagram, Threads and image-only X posts expose no readable text to a crawler, so their descriptions stay generic - write one line per entry in data/overrides.json or drop the post in Notion (each is listed under Open decisions).
-- Two links are gone for good: the RoundtableSpace X post (deleted) and iamzhihuix/happy-claude-skills (repository removed, no fork found) - remove them in Notion or set a new url in data/overrides.json.
+- Two links are gone for good: the RoundtableSpace X post (deleted) and iamzhihuix/happy-claude-skills (repository removed, no fork found) - remove them in Notion or set a new url in data/overrides.json. The @youraicompass SEO prompts Instagram post is gone too (2026-09-09); the 5 prompt names Matt saved under it are sub-toggles that the links-mode Prompts toggle does not publish - turn them into notes if they should go public.
+- Social sources (Instagram carousels, the Threads post, X posts and X articles) were described in Notion on 2026-09-09 from the actual post content (Apify scrapes, slides read one by one); link_mention spans had to be rewritten as plain text links because the Notion API refuses to write link_mention objects back.
 
 ## Unmapped, defaulted to private (fail closed)
 
@@ -240,18 +240,11 @@ Blocks forced private by config (private_block_ids):
   - claude.md (342daecf-ce6b-80f9-b612-ef32ff2a6d30, Field notes)
   - claude.md (31bdaecf-ce6b-80a1-9b1c-f4294fa11cda, n8n with Claude Code)
   - claude.md (31bdaecf-ce6b-8087-af4b-ea99a723254b, n8n with Claude Code)
-- config-exclude_urls: 19
+- config-exclude_urls: 6
   - https://x.com/RoundtableSpace/status/2076597439189111272 (39edaecf-ce6b-80ee-a365-d82c4045f9fd, Learn)
   - https://github.com/iamzhihuix/happy-claude-skills (a0187d62-1a98-4220-a443-d27c1f45b1ed, Skills)
   - https://github.com/ggerganov/whisper.cpp (353daecf-ce6b-80c8-9e34-f3cecc6c0fdf, Skills)
-  - https://www.instagram.com/p/DaqH6G0kn5P (39cdaecf-ce6b-80a3-acd8-de81e841c9bf, Learn)
-  - https://www.instagram.com/p/DZzbZzVCCV-?img_index=1 (38fdaecf-ce6b-80cc-9e31-fe5dbf1403a2, Learn)
-  - https://www.instagram.com/p/DaA-8wLE2NX (38edaecf-ce6b-80b3-98e6-e79c20db7b22, Learn)
-  - https://www.instagram.com/p/DV9_kEmEVxM?img_index=2 (326daecf-ce6b-809a-9878-d097d46d9df4, Prompting)
-  - https://x.com/cyrilxbt/status/2042980564194521176 (342daecf-ce6b-8009-ab20-fd4ebaa8e1ef, Prompting)
-  - https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1 (32cdaecf-ce6b-805a-94d9-fd0feb2bdbe8, Prompting)
-  - https://www.instagram.com/p/DWHfrCHGc6r (336daecf-ce6b-80b0-8b59-d866a6c29f01, Prompting)
-  - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949, Prompting)
+  - https://www.instagram.com/p/DYdGvacErNf (e141ece0-d812-4a43-91c2-be980692e209, Prompting)
   - https://codexbar.app (349daecf-ce6b-80db-a56d-c2f149efc38c, Tools and memory)
 - email-tracking-redirect: 2
   - elinkb7e.mail.aiwithremy.com (355daecf-ce6b-803a-aedc-e25f91ddd717, Field notes)
@@ -280,20 +273,7 @@ Blocks forced private by config (private_block_ids):
   - https://github.com/iamzhihuix/happy-claude-skills (a0187d62-1a98-4220-a443-d27c1f45b1ed)
   - https://github.com/ggerganov/whisper.cpp (353daecf-ce6b-80c8-9e34-f3cecc6c0fdf)
   - https://github.com/ggerganov/whisper.cpp (353daecf-ce6b-80c8-9e34-f3cecc6c0fdf)
-  - https://www.instagram.com/p/DaqH6G0kn5P (39cdaecf-ce6b-80a3-acd8-de81e841c9bf)
-  - https://www.instagram.com/p/DaqH6G0kn5P (39cdaecf-ce6b-80a3-acd8-de81e841c9bf)
-  - https://www.instagram.com/p/DZzbZzVCCV-?img_index=1 (38fdaecf-ce6b-80cc-9e31-fe5dbf1403a2)
-  - https://www.instagram.com/p/DZzbZzVCCV-?img_index=1 (38fdaecf-ce6b-80cc-9e31-fe5dbf1403a2)
-  - https://www.instagram.com/p/DaA-8wLE2NX (38edaecf-ce6b-80b3-98e6-e79c20db7b22)
-  - https://www.instagram.com/p/DaA-8wLE2NX (38edaecf-ce6b-80b3-98e6-e79c20db7b22)
-  - https://www.instagram.com/p/DV9_kEmEVxM?img_index=2 (326daecf-ce6b-809a-9878-d097d46d9df4)
-  - https://x.com/cyrilxbt/status/2042980564194521176 (342daecf-ce6b-8009-ab20-fd4ebaa8e1ef)
-  - https://x.com/cyrilxbt/status/2042980564194521176 (342daecf-ce6b-8009-ab20-fd4ebaa8e1ef)
-  - https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1 (32cdaecf-ce6b-805a-94d9-fd0feb2bdbe8)
-  - https://www.instagram.com/p/DWHfrCHGc6r (336daecf-ce6b-80b0-8b59-d866a6c29f01)
-  - https://www.instagram.com/p/DWHfrCHGc6r (336daecf-ce6b-80b0-8b59-d866a6c29f01)
-  - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949)
-  - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949)
+  - https://www.instagram.com/p/DYdGvacErNf (e141ece0-d812-4a43-91c2-be980692e209)
   - https://codexbar.app (349daecf-ce6b-80db-a56d-c2f149efc38c)
 
 ## Entries missing a description (Notion text)
@@ -303,7 +283,6 @@ Blocks forced private by config (private_block_ids):
 - Collections: jeffallan.github.io/claude-skills - https://jeffallan.github.io/claude-skills/skills-guide (34fdaecf-ce6b-8035-9a69-fecbafd89a9b)
 - Field notes / Context: plugin for memory - https://github.com/supermemoryai/claude-supermemory (32cdaecf-ce6b-8056-82a5-e8480b62abea)
 - Field notes / Personal assistant: Memory - https://www.reddit.com/r/ClaudeAI/comments/1r66oo0/how_i_structure_claude_code_projects_claudemd (342daecf-ce6b-80d6-8b10-de827d12e74c)
-- Learn: @cyrilXBT on X - https://x.com/cyrilXBT/status/2076353923695227108 (39edaecf-ce6b-8048-b9c8-d9efc1be1ded)
 - Learn: YouTube video ACRd0Ikg_KI - https://www.youtube.com/watch?v=ACRd0Ikg_KI (363daecf-ce6b-805d-8fc7-effd1507d619)
 - Learn: YouTube video RAZVk5NPNtE - https://www.youtube.com/watch?v=RAZVk5NPNtE (342daecf-ce6b-80b4-b625-f43e9619a0de)
 - Learn: YouTube video ZAaxx3qyT8g - https://www.youtube.com/watch?v=ZAaxx3qyT8g (36edaecf-ce6b-801e-9cbd-ddaa6c31d5dc)
@@ -325,7 +304,6 @@ Blocks forced private by config (private_block_ids):
 - YouTube video RAZVk5NPNtE - https://www.youtube.com/watch?v=RAZVk5NPNtE (342daecf-ce6b-80b4-b625-f43e9619a0de)
 - YouTube video wkv2ifxPpF8 - https://www.youtube.com/watch?v=wkv2ifxPpF8 (355daecf-ce6b-80d0-8ef5-ca8eceea0abb)
 - YouTube video ZAaxx3qyT8g - https://www.youtube.com/watch?v=ZAaxx3qyT8g (36edaecf-ce6b-801e-9cbd-ddaa6c31d5dc)
-- @cyrilXBT on X - https://x.com/cyrilXBT/status/2076353923695227108 (39edaecf-ce6b-8048-b9c8-d9efc1be1ded)
 - theaileverage.beehiiv.com/p - https://theaileverage.beehiiv.com/p/top-5-claude-code-front-end-skills (35fdaecf-ce6b-8076-8bc7-f248b6a47d84)
 - jeffallan.github.io/claude-skills - https://jeffallan.github.io/claude-skills/skills-guide (34fdaecf-ce6b-8035-9a69-fecbafd89a9b)
 - thevibefounder.com/r - https://thevibefounder.com/r/loops (39cdaecf-ce6b-8046-8b8e-d2e2c21143fa)
@@ -366,6 +344,7 @@ Blocks forced private by config (private_block_ids):
 
 - https://agentmatik.ai/llms-full.txt: fetched=True parsed=62 matched_by_url=36 matched_by_name=15 new=6
 - skipped (no repo URL on the site): agents-skills-autoreview, dont-hack-me, larry (LarryLoop), paid-media-skills (Ryze), prompt-guard
+- matched by name (site name -> entry): canvas-design -> Canvas Design, code-reviewer (jeffallan) -> Code Reviewer, competitive-ads-extractor -> ComposioHQ/awesome-claude-skills/competitive-ads-extractor, content-research-writer -> Content Research Writer, emil-design-eng -> emil-design-eng, feature-forge -> Feature Forge, find-skills (ClawHub) -> find-skills, frontend-design -> Frontend design, rag-architect -> RAG Architect, secure-code-guardian -> Secure Code Guardian, skill-creator -> skill-creator, spec-miner -> Spec Miner, the-fool -> The Fool, theme-factory -> Theme Factory, webapp-testing -> Web App Testing (official)
 
 ## Open decisions (from tools/lint.py)
 
