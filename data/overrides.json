@@ -1,0 +1,82 @@
+{
+ "a8d2368c": {
+  "url": "https://github.com/coreyhaines31/marketingskills/tree/main/skills/emails",
+  "_why": "skills/email-sequence was renamed to skills/emails in the v2.0 skill renames (commit 2026-05-14); same 'Email Sequence Design' skill"
+ },
+ "e9478db1": {
+  "url": "https://github.com/woosal1337/blog/tree/main/videos/ep01-the-cure-for-ai-slop/asd-ste100",
+  "_why": "the skill file moved into the asd-ste100 plugin folder of the same episode directory"
+ },
+ "ff545c60": {
+  "url": "https://github.com/steipete/CodexBar",
+  "name": "CodexBar",
+  "_why": "Notion linked one release zip; the repository is the stable home"
+ },
+ "c24961d1": {
+  "name": "How I structure Claude Code projects (Reddit post)",
+  "description": "Reddit post on splitting memory into .claude/rules files, a Stop hook that captures lessons as you go, and CLAUDE.md as a routing file - my notes on it are below.",
+  "_why": "Reddit gives bots no title or summary; name from the post slug, description from the notes kept under it"
+ },
+ "ebed0362": {
+  "description": "5 SEO prompts from @youraicompass, shared as an Instagram post.",
+  "_why": "Notion note was 29 characters; same words plus the platform"
+ },
+ "78a658bc": {
+  "description": "Context engineering framework for reliable Claude Code with planning and subagent orchestration.",
+  "_why": "the Notion bullet carried a second sentence pasted from the awesome-claude-code description; trimmed to the GSD part"
+ },
+ "86940783": {
+  "description": "Vercel's official collection of agent skills, containing the web-design-guidelines skill that reviews UI code against Vercel's web interface standards to catch design, UX and accessibility issues, with file-level feedback.",
+  "_why": "the Notion bullet described two products (this repo and UI/UX Pro Max, which has its own entry); trimmed to this repo, star count comes from GitHub",
+  "also_urls": []
+ },
+ "a5ca6b15": {
+  "name": "claude-supermemory",
+  "_why": "Notion text was 'plugin for memory' followed by the bare URL"
+ },
+ "b36c145e": {
+  "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+  "_why": "Notion held install instructions, not a description; this is the repository's own description"
+ },
+ "a8020624": {
+  "description": "The lead-magnets skill from Corey Haines' marketing skills collection (the whole collection is listed under Collections).",
+  "_why": "Notion bullet had no text after the name; without this the repository-level description would describe the wrong thing"
+ },
+ "_notes": {
+  "32cdaecf-ce6b-806d-bd8f-e92add78550c": {
+   "text": "bypass permissions - builder mode, direct system manipulation, Claude does not have to ask anything",
+   "_why": "typo fixed (dírect) and an unfinished parenthetical dropped"
+  },
+  "32cdaecf-ce6b-8085-a8bd-c1a75cbc8922": {
+   "text": "before asking to debug, think about what you actually know about the problem",
+   "_why": "typo fix only"
+  },
+  "31ddaecf-ce6b-80c6-8ccc-c371eae36adc": {
+   "text": "Compact aggressively (~50%) for multi-file coding; for linear work and workflows only when CC starts forgetting and repeating mistakes",
+   "_why": "typo fix (unly) and the sentence completed the way it reads in Notion"
+  }
+ },
+ "a237e1b0": {
+  "name": "Skills vs MCP (The New Stack)",
+  "description": "\"Skills (Markdown) are the knowledge layer; MCP is the execution layer,\" with a 100x token-cost difference for equivalent functionality. The article also covers Brad Feld's open-sourced CompanyOS, which runs an operation on 12 Markdown files plus 8 MCPs, each skill with a standalone mode that works without MCP.",
+  "_why": "the Notion bullet was garbled by pasted link labels; same content, cleaned up"
+ },
+ "7ddaf9b8": {
+  "description": "Twelve Google Ads skills covering campaign audits, keyword work, and reporting.",
+  "_why": "Notion said only '12 Google Ads skills'; this is the agentmatik.ai summary of the same repository"
+ },
+ "32e5d7a6": {
+  "name": "Usage for Claude",
+  "description": "macOS menu bar app that shows your Claude usage, from the App Store.",
+  "_why": "App Store page title and boilerplate replaced by Matt's toggle wording plus the platform"
+ },
+ "8be844b5": {
+  "also_urls": []
+ },
+ "fc8370d7": {
+  "also_urls": [
+   "https://skills.sh/czlonkowski/n8n-skills"
+  ],
+  "_why_also": "the skills.sh page belongs to n8n-skills, Notion listed it next to n8n-mcp"
+ }
+}

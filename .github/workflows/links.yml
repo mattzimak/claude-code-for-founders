@@ -1,0 +1,60 @@
+name: Weekly link check
+
+# Re-verifies every link, refreshes GitHub metadata (stars, license, last push,
+# archived, renamed), rebuilds the README and opens a pull request when the
+# README changed. Uses only the repository's GITHUB_TOKEN.
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Enrich (GitHub API via gh, oEmbed, HTTP checks)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/enrich.py
+
+      - name: Link status summary
+        run: python3 tools/check_links.py
+
+      - name: Build README
+        run: python3 tools/build.py
+
+      - name: Did the README change?
+        id: diff
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open a pull request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/weekly-link-check
+          delete-branch: true
+          commit-message: "chore: weekly link check and metadata refresh"
+          title: "Weekly link check: README changed"
+          body: |
+            Automated run of `tools/enrich.py`, `tools/check_links.py` and `tools/build.py`.
+
+            Review `data/_dead.md` for dead or redirected links before merging.
+            Fix names/descriptions in `data/overrides.json`, never in the README (it is generated).
+          labels: automation

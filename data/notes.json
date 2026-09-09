@@ -1,0 +1,1017 @@
+{
+ "generated_by": "scripts/awesome-sync.py",
+ "sections": {
+  "Agent teams and subagents": {
+   "": [
+    {
+     "block_id": "32cdaecf-ce6b-8098-a90e-d81434274a66",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Agent Teams & Sub-agents (+gstack)"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-8016-b02e-eb35ba796ff8",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Sub-agents for atomic tasks ONLY - Don't create CEO agents and product agents. Keep shared context in ONE session. Sub-agents lose the reasoning chain. Bring work to the context, not context to the work."
+    }
+   ]
+  },
+  "Prompting": {
+   "": [
+    {
+     "block_id": "39edaecf-ce6b-8008-bd58-e57827e286b0",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Prompting Fable 5"
+    },
+    {
+     "block_id": "39edaecf-ce6b-8049-99a2-c517c5f1679d",
+     "type": "text",
+     "depth": 1,
+     "text": "Fable 5 can report a step as done before verifying it, to fix, insert always this prompt:"
+    },
+    {
+     "block_id": "39edaecf-ce6b-8026-87f1-eee4d0afc1b5",
+     "type": "code",
+     "depth": 1,
+     "text": "Before reporting progress, audit each claim against a tool result from this session.\n\nOnly report work you can point to evidence for. If something is not verified, say so.\n\nIf a step failed, state that with the output. Do not report success you cannot prove.",
+     "language": "plain text"
+    },
+    {
+     "block_id": "39edaecf-ce6b-8068-9975-d437952e43e5",
+     "type": "text",
+     "depth": 1,
+     "text": "Blindspot pass - Ask Claude to surface your unknown unknowns before starting unfamiliar work."
+    },
+    {
+     "block_id": "39edaecf-ce6b-80a1-a124-fb54b403ae39",
+     "type": "quote",
+     "depth": 1,
+     "text": "\"Can you do a blindspot pass to help me figure out my relevant unknown unknowns and help me prompt you better.\""
+    },
+    {
+     "block_id": "39edaecf-ce6b-806e-8f64-e35bc7e96b54",
+     "type": "text",
+     "depth": 1,
+     "text": "Brainstorms & prototypes - Ask for several wildly different options to react to instead of one answer."
+    },
+    {
+     "block_id": "39edaecf-ce6b-800b-8674-fe8fb30725d0",
+     "type": "quote",
+     "depth": 1,
+     "text": "\"Make me an HTML page with 4 wildly different design directions so I can react to them.\""
+    },
+    {
+     "block_id": "39edaecf-ce6b-802a-8a53-c263af504c22",
+     "type": "text",
+     "depth": 1,
+     "text": "Interviews - Have Claude interview you one question at a time to resolve ambiguity."
+    },
+    {
+     "block_id": "39edaecf-ce6b-80e4-b334-f1edcb8f3bb0",
+     "type": "quote",
+     "depth": 1,
+     "text": "\"Prioritize questions where my answer would change the architecture.\""
+    },
+    {
+     "block_id": "39edaecf-ce6b-80b7-b8ef-c53dacb54602",
+     "type": "text",
+     "depth": 1,
+     "text": "References - Point Claude at existing code and have it reimplement the same semantics."
+    },
+    {
+     "block_id": "39edaecf-ce6b-805e-997b-fd83a424be61",
+     "type": "quote",
+     "depth": 1,
+     "text": "\"This Rust crate in vendor/rate-limiter implements the exact backoff behavior I want. Read it and reimplement the same semantics in our TypeScript API client.\""
+    },
+    {
+     "block_id": "39edaecf-ce6b-805c-956d-d3aaf6bb9c16",
+     "type": "text",
+     "depth": 1,
+     "text": "Implementation notes - Have Claude keep a running log and handle edge cases without stopping."
+    },
+    {
+     "block_id": "39edaecf-ce6b-809e-89cd-e924a720cefe",
+     "type": "quote",
+     "depth": 1,
+     "text": "\"Keep an implementation-notes.md file. If you hit an edge case, pick the conservative option, log it under 'Deviations', and keep going.\""
+    },
+    {
+     "block_id": "39edaecf-ce6b-80aa-95b3-cd0181adcbb5",
+     "type": "text",
+     "depth": 1,
+     "text": "Quizzes - After a change, ask for a report plus a quiz to verify your own understanding."
+    },
+    {
+     "block_id": "39edaecf-ce6b-806c-a197-f629d2f8b07e",
+     "type": "quote",
+     "depth": 1,
+     "text": "\"Give me a HTML report on the changes with context, intuition, what was done - and a quiz at the bottom that I must pass.\""
+    }
+   ]
+  },
+  "Collections": {
+   "": [
+    {
+     "block_id": "34fdaecf-ce6b-807d-a4ac-d6415305a86b",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Collections"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80ad-b6cf-e89388c504b4",
+     "type": "heading",
+     "depth": 1,
+     "text": "The core idea",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8087-8d6b-f340ae98f328",
+     "type": "text",
+     "depth": 1,
+     "text": "gstack is a process, not a toolbox - its skills mirror a sprint: Think → Plan → Build → Review → Test → Ship → Reflect. Each skill writes an artifact the next one reads (/office-hours writes a design doc that /plan-ceo-review reads; /plan-eng-review writes a test plan that /qa picks up). So order matters more than which individual command you run.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-800e-a794-c47ed7fade6e",
+     "type": "heading",
+     "depth": 1,
+     "text": "The main loop (in order)",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8028-8c73-fa37a455b470",
+     "type": "text",
+     "depth": 1,
+     "text": "1. /office-hours - start every new idea here.\nYou describe what you want to build; it interrogates you with forcing questions, pushes back on your framing, and produces a design doc. Why first: it reframes the problem before any code exists, and the design doc feeds everything downstream.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8068-a4bb-f76e559dc9b9",
+     "type": "text",
+     "depth": 1,
+     "text": "2. /autoplan - turn the idea into a reviewed plan.\nOne command that automatically runs the CEO review (scope: is this the right thing?), design review, eng review (architecture, edge cases, tests), and DX review - auto-deciding the obvious calls and only surfacing taste decisions to you. Use this instead of running /plan-ceo-review, /plan-eng-review, /plan-design-review individually unless you want one specific lens.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80be-9881-eb67b5adb12b",
+     "type": "text",
+     "depth": 1,
+     "text": "3. Build - normal Claude Code work, implementing the approved plan.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80c5-b74e-cfee024564ea",
+     "type": "text",
+     "depth": 1,
+     "text": "4. /review - before any PR.\nStaff-engineer-style review hunting for bugs that pass CI but break in production. Auto-fixes the obvious, asks you about the risky ones.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8071-8d04-ed5185fdc211",
+     "type": "text",
+     "depth": 1,
+     "text": "5. /qa <url> - test it for real.\nOpens an actual headless Chromium browser, clicks through your flows, finds bugs, fixes them with atomic commits, and generates regression tests. /qa-only does the same but report-only (no code changes). /setup-browser-cookies first if the page needs auth.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80dd-8104-cf4f2e2b2f4a",
+     "type": "text",
+     "depth": 1,
+     "text": "6. /ship - open the PR.\nSyncs main, runs tests, audits coverage, pushes, opens the PR. Then /land-and-deploy merges, waits for CI/deploy, and verifies production. /canary watches production afterwards for console errors and regressions.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8007-885c-f3a34d9980a6",
+     "type": "text",
+     "depth": 1,
+     "text": "7. /retro - weekly.\nReviews what shipped, test health trends, and growth opportunities across the week.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8035-96d2-f02fdf1d8d04",
+     "type": "heading",
+     "depth": 1,
+     "text": "Picking the right review",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80ae-9ef9-ee42e16ff6a2",
+     "type": "table_row",
+     "depth": 1,
+     "text": "You built... | Before code | After shipping",
+     "cells": [
+      "You built...",
+      "Before code",
+      "After shipping"
+     ],
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8059-a1ef-d3f396d7ed7e",
+     "type": "table_row",
+     "depth": 1,
+     "text": "UI / web app | /plan-design-review | /design-review",
+     "cells": [
+      "UI / web app",
+      "/plan-design-review",
+      "/design-review"
+     ],
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-808c-a597-eb0afaf07fe2",
+     "type": "table_row",
+     "depth": 1,
+     "text": "API / CLI / docs | /plan-devex-review | /devex-review",
+     "cells": [
+      "API / CLI / docs",
+      "/plan-devex-review",
+      "/devex-review"
+     ],
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-808c-af12-d40f59f0272c",
+     "type": "table_row",
+     "depth": 1,
+     "text": "Architecture / perf | /plan-eng-review | /review",
+     "cells": [
+      "Architecture / perf",
+      "/plan-eng-review",
+      "/review"
+     ],
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-806b-a4d3-efeca5e3a728",
+     "type": "table_row",
+     "depth": 1,
+     "text": "Everything | /autoplan | -",
+     "cells": [
+      "Everything",
+      "/autoplan",
+      "-"
+     ],
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80a6-8869-c97d209a4dd2",
+     "type": "heading",
+     "depth": 1,
+     "text": "Standalone tools worth knowing",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8099-a0be-e640e528eea7",
+     "type": "bullet",
+     "depth": 1,
+     "text": "/investigate - systematic root-cause debugging with a hard rule: no fixes without investigation first. Use this instead of \"just try a fix\" when something breaks.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8088-a67e-c87313a182ae",
+     "type": "bullet",
+     "depth": 1,
+     "text": "/cso - OWASP Top 10 + STRIDE security audit with a high confidence gate (low noise). Good before exposing anything publicly.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8072-a3c6-f8ea7c8fda0b",
+     "type": "bullet",
+     "depth": 1,
+     "text": "/browse - the headless browser directly (~100ms per command); this is what /qa uses under the hood.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80c0-bacc-c44ba0db9502",
+     "type": "bullet",
+     "depth": 1,
+     "text": "/design-shotgun → /design-html - generates 4-6 mockup variants in a comparison board, learns your taste from feedback, then converts the winner into production HTML.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-808b-9f95-cb6ff6c8870a",
+     "type": "bullet",
+     "depth": 1,
+     "text": "/careful / /freeze / /guard - session guardrails: block destructive commands or restrict edits to one directory.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80e9-a556-e93db682de0d",
+     "type": "bullet",
+     "depth": 1,
+     "text": "/learn - manage what gstack remembers about your codebase across sessions.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80a6-9a2d-c8a31f98db95",
+     "type": "bullet",
+     "depth": 1,
+     "text": "/gstack-upgrade - keep it current.",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80f6-bd0e-ec25159849c8",
+     "type": "heading",
+     "depth": 1,
+     "text": "Minimal first run (the README's own suggestion)",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80c0-9c30-fc60eaddfa50",
+     "type": "numbered",
+     "depth": 1,
+     "text": "/office-hours - describe something you're building (e.g. one of your client web apps)",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8073-ade7-dd87a4b4c15d",
+     "type": "numbered",
+     "depth": 1,
+     "text": "/plan-ceo-review on the resulting idea",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-80a9-b5a8-f7d1c6930b9d",
+     "type": "numbered",
+     "depth": 1,
+     "text": "/review on any branch with changes",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8011-86fc-e441573566cd",
+     "type": "numbered",
+     "depth": 1,
+     "text": "/qa on a staging URL",
+     "entry_id": "b22ad9f6"
+    },
+    {
+     "block_id": "37cdaecf-ce6b-8041-abb0-fa1b1b09dc5e",
+     "type": "text",
+     "depth": 1,
+     "text": "That's enough to know whether the full sprint loop is for you.",
+     "entry_id": "b22ad9f6"
+    }
+   ]
+  },
+  "Field notes": {
+   "General best practices": [
+    {
+     "block_id": "342daecf-ce6b-8008-9440-d602018410e4",
+     "type": "toggle",
+     "depth": 0,
+     "text": "General best practices"
+    },
+    {
+     "block_id": "342daecf-ce6b-808d-8589-f94002ee1bd7",
+     "type": "bullet",
+     "depth": 1,
+     "text": "weekly review of all skills and claude code files"
+    }
+   ],
+   "Plan vs bypass mode": [
+    {
+     "block_id": "32cdaecf-ce6b-8020-8a6b-c01ce14148df",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Plan vs Bypass mode"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-8003-b9fe-ee746583a8c8",
+     "type": "bullet",
+     "depth": 1,
+     "text": "with plan mode significantly better output, more information in plan mode = better input = better output (shift + tab twice to enter plan mode)"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-80c4-988d-f3452e38e0df",
+     "type": "bullet",
+     "depth": 1,
+     "text": "before asking to build a feature, think about the architecture"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-8085-a8bd-c1a75cbc8922",
+     "type": "bullet",
+     "depth": 1,
+     "text": "before you asking to debug, think about what actually know about the problem"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-8045-bef5-f21f5ffccb56",
+     "type": "bullet",
+     "depth": 1,
+     "text": "before asking to refactor something, think about what the end state should look like"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-809e-8fff-f4e86a64688c",
+     "type": "bullet",
+     "depth": 1,
+     "text": "deep back and forth with ChatGPT/Gemini/Claude, defining what I want to build, ask the LLM for the various options you can take in terms of system design, settle on a solution. asking each other questions, not just a one way street."
+    },
+    {
+     "block_id": "31adaecf-ce6b-80b1-a26a-e1cd75994fbb",
+     "type": "toggle",
+     "depth": 2,
+     "text": "Plan mode examples"
+    },
+    {
+     "block_id": "31adaecf-ce6b-809f-992b-d11d916befb5",
+     "type": "bullet",
+     "depth": 3,
+     "text": "Architecture might be wrong (Wait… this should maybe be modularized, Maybe this should be two workflows, What if this scales?)"
+    },
+    {
+     "block_id": "31adaecf-ce6b-8076-be41-d7be4cb4eb3f",
+     "type": "bullet",
+     "depth": 3,
+     "text": "Adding a New Feature Mid-Build (Where does retry sit? Is it workflow-level or node-level? Do we centralize error handling?)"
+    },
+    {
+     "block_id": "31adaecf-ce6b-804d-9f9f-ffe373d27bcd",
+     "type": "bullet",
+     "depth": 3,
+     "text": "Need Clarification / Edge Case Thinking"
+    },
+    {
+     "block_id": "31adaecf-ce6b-8080-9289-f4291048cf66",
+     "type": "bullet",
+     "depth": 4,
+     "text": "What if the webhook fails?"
+    },
+    {
+     "block_id": "31adaecf-ce6b-80ab-810a-fb9690b707f3",
+     "type": "bullet",
+     "depth": 4,
+     "text": "What if OpenAI times out?"
+    },
+    {
+     "block_id": "31adaecf-ce6b-80d0-99ba-fae812272f76",
+     "type": "bullet",
+     "depth": 4,
+     "text": "What if the transcript is empty?"
+    },
+    {
+     "block_id": "31adaecf-ce6b-8014-87f8-f0159e5dfcc2",
+     "type": "bullet",
+     "depth": 4,
+     "text": "What if 5 jobs hit simultaneously?"
+    },
+    {
+     "block_id": "31adaecf-ce6b-80fd-ab3b-d22e8e4cab1f",
+     "type": "bullet",
+     "depth": 3,
+     "text": "Want to refactor cleanly"
+    },
+    {
+     "block_id": "31adaecf-ce6b-805e-8d26-fe143928e45b",
+     "type": "bullet",
+     "depth": 4,
+     "text": "Review this workflow as a senior automation engineer and suggest structural improvements before modifying anything."
+    }
+   ],
+   "Effort": [
+    {
+     "block_id": "347daecf-ce6b-8055-84b3-ee4045140745",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Effort"
+    },
+    {
+     "block_id": "347daecf-ce6b-8001-82cb-e396ba2acb54",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Default changed (March 2026): Pro/Max plans now default to medium, not high. Fix: export CLAUDE_CODE_EFFORT_LEVEL=high in your shell profile"
+    },
+    {
+     "block_id": "347daecf-ce6b-80f6-a3f8-f84b2aaaf7ee",
+     "type": "bullet",
+     "depth": 1,
+     "text": "4 levels - Low (skip thinking, fast/cheap) → Medium (balanced, good default for implementation) → High (always thinks, proactive file reading) → Max (no ceiling, Opus only, expensive)"
+    },
+    {
+     "block_id": "347daecf-ce6b-8045-acd7-f30de798acde",
+     "type": "bullet",
+     "depth": 1,
+     "text": "The pattern: Plan/architecture = High + Opus → Implementation = Medium + Sonnet → Stuck after 2 attempts = Max"
+    },
+    {
+     "block_id": "347daecf-ce6b-801c-9ab3-db2b2471ac76",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Adaptive thinking already self-regulates within a level - Claude skips deep thinking on trivial tasks at medium. You're only setting the ceiling, not forcing it on every prompt"
+    },
+    {
+     "block_id": "347daecf-ce6b-8033-b07b-f2d28d62325b",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Cost: Max can be 10x more tokens than Low on the same prompt. Opus 4.6 uses ~6-8% of subscription quota per heavy prompt"
+    },
+    {
+     "block_id": "347daecf-ce6b-80f8-94fb-eb0591e87f20",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Switch mid-session with /effort high or /effort medium - build the habit at the start of planning vs execution blocks"
+    },
+    {
+     "block_id": "347daecf-ce6b-8038-93f2-d2a1a59ada6e",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Most reliable way to set Max: CLAUDE_CODE_EFFORT_LEVEL=max env var - effortLevel: \"max\" in settings.json gets silently overwritten by the UI (known bug)"
+    },
+    {
+     "block_id": "347daecf-ce6b-8052-b2b1-c49c1ad62106",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Ultrathink keyword ≠ Max - it actually triggers High. Use /effort max explicitly if you want true max"
+    },
+    {
+     "block_id": "347daecf-ce6b-8050-819a-d398d3b6deaa",
+     "type": "bullet",
+     "depth": 1,
+     "text": "opusplan model alias - automatically uses Opus for planning, Sonnet for execution. Best of both worlds for full sessions"
+    },
+    {
+     "block_id": "347daecf-ce6b-80e4-ad73-d30210071829",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Skill YAML frontmatter supports effort: low - useful for batch/automation skills so they don't burn quota"
+    },
+    {
+     "block_id": "342daecf-ce6b-8001-a37b-e5e47830072a",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Effort"
+    },
+    {
+     "block_id": "342daecf-ce6b-80df-9e33-e8b7d1198dbf",
+     "type": "bullet",
+     "depth": 1,
+     "text": "use medium for implementation, high for complex reasoning, and max when you're stuck or the stakes are high. The effort parameter controls far more than thinking depth - it governs tool-call appetite, file-reading behavior, and response length simultaneously"
+    }
+   ],
+   "Prompting basics": [
+    {
+     "block_id": "32cdaecf-ce6b-802e-8978-ec6627a8ec04",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Prompting"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-80af-8e35-c310773f200c",
+     "type": "bullet",
+     "depth": 1,
+     "text": "give it full execution loop = faster - “write, run tests, fix failures”"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-8064-a416-ce8518cfe2f6",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Break every task into smaller checkpoints - \"Create login route, then session handling.\", Smaller scope = better output"
+    },
+    {
+     "block_id": "318daecf-ce6b-8072-8632-cce8d12e72d5",
+     "type": "bullet",
+     "depth": 1,
+     "text": "plan mode - architect mode, whiteboard mode, system design thinking, claude does not execute and call tools, thinks through structure, risks, dependencies, proposes clear plan before touching any system"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-806d-bd8f-e92add78550c",
+     "type": "bullet",
+     "depth": 1,
+     "text": "bypass permissions - builder mode, dírect system manipulation, Claude does not have to ask anything, (settings - claude code -"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-80ce-afc0-d88cc3c01ef9",
+     "type": "bullet",
+     "depth": 1,
+     "text": "can switch from bypass back to plan mode to rebuild architecture, adding new feature, need clarification/edge case thinking/want to refactor cleanly"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-801f-81e5-cba2041dfacc",
+     "type": "bullet",
+     "depth": 1,
+     "text": "potential flow - 🧠 Plan,⚡ Build, 🧠 Re-evaluate, ⚡ Refine, 🧠 Scale-thinking, ⚡ Optimize implementation"
+    }
+   ],
+   "Structure": [
+    {
+     "block_id": "32cdaecf-ce6b-80a7-960d-da3d244f5628",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Structure"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-800c-89ab-d41d74efae01",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Run /init on every project - Claude scans your codebase and creates a CLAUDE.md rules file, review it, edit it, make it yours."
+    },
+    {
+     "block_id": "395daecf-ce6b-8178-acac-f21988b39b8c",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Lazy loading is what makes one big workspace free - subfolder CLAUDE.md files load ONLY when Claude touches files in that subtree. Workspace size does not equal context size - the entire argument against a monorepo dies here."
+    },
+    {
+     "block_id": "395daecf-ce6b-81a9-82af-d0a54377e739",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Memory files concatenate, they never override - the popular 'deeper CLAUDE.md wins on conflict' claim is wrong per official docs. Contradicting instructions between root and subfolder = coin-flip behavior. Nested files must add, not contradict."
+    },
+    {
+     "block_id": "395daecf-ce6b-818e-8116-cfe50a01afc2",
+     "type": "bullet",
+     "depth": 1,
+     "text": "The launch directory IS the scope - .mcp.json and .claude/settings.json load only from where you start Claude - they are NOT inherited from parents. cd marketing && claude = marketing MCP servers + skills without the n8n stack. This one habit replaces the entire reason people keep separate repos."
+    },
+    {
+     "block_id": "395daecf-ce6b-8166-abda-fc5c2076b558",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Nested skills are directory-scoped, not session-scoped - a .claude/skills/ inside a subfolder activates whenever Claude works there, even in a session started at root."
+    },
+    {
+     "block_id": "395daecf-ce6b-813f-a5f5-e62af6944d2f",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Three-boundary test for a separate repo - only lifecycle (deploys independently), audience (others push to it), or access (NDA/privacy) justify a repo. Notes, plans, client working files, scripts - all in the one workspace."
+    },
+    {
+     "block_id": "395daecf-ce6b-8110-981d-d9886e3ce323",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Per-role repos fail empirically - the role you do 90% of the time absorbs everything; the other repos die. Real case: 6 role repos dead for 2+ months, backups silently stale, real work stranded in one of them."
+    },
+    {
+     "block_id": "395daecf-ce6b-8175-b1a1-f423f2c4ca62",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Root CLAUDE.md = map, not manual - folder table + global rules + pointers, under 200 lines (official guidance). Update it when the SYSTEM changes, not when the work changes. Detail goes in domain files and skills."
+    },
+    {
+     "block_id": "395daecf-ce6b-81b4-8285-dbc4040d718f",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Exported configs are the leak vector - n8n workflow JSONs, notebook outputs, API dumps carry live tokens into git - not your source code. A gitleaks pre-commit found 16 live secrets in one workspace. .mcp.json takes ${ENV_VAR} refs, never literals."
+    },
+    {
+     "block_id": "395daecf-ce6b-81c8-8cbf-f10c92065477",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Old repo histories are radioactive - when consolidating, rsync content-only and never merge git history that ever held a secret - then rotate those keys. Archive the old repo on GitHub instead of deleting: free, reversible."
+    },
+    {
+     "block_id": "395daecf-ce6b-8163-9957-dd6df6765f48",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Worktrees hide real work - before deleting any repo, check .claude/worktrees/ - files can exist ONLY there, one prune away from loss. Real case: 44 production skills lived solely inside an uncommitted worktree."
+    },
+    {
+     "block_id": "395daecf-ce6b-8146-a3a3-d45350e7bb8d",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Transcripts are plaintext - everything Claude reads can land in ~/.claude/projects/. A root session can read every client folder - NDA or competing clients need their own repo (or devcontainer), not a subfolder."
+    },
+    {
+     "block_id": "395daecf-ce6b-8184-b6d4-e9f71b587ea1",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Scaffolding rots - elaborate .claude/ rule/command/agent trees built up front decay - one practitioner deleted 60% within 4 months. Add structure only when a pain repeats."
+    }
+   ],
+   "CLAUDE.md": [
+    {
+     "block_id": "32cdaecf-ce6b-8014-b0da-c8c0bbb60913",
+     "type": "toggle",
+     "depth": 0,
+     "text": "CLAUDE.md"
+    },
+    {
+     "block_id": "355daecf-ce6b-803a-aedc-e25f91ddd717",
+     "type": "toggle",
+     "depth": 1,
+     "text": "A version from AI with Remy (Link)"
+    },
+    {
+     "block_id": "355daecf-ce6b-8082-aa0d-d3919017d013",
+     "type": "bullet",
+     "depth": 2,
+     "text": "Plan mode as the default. For anything non-trivial (3+ steps or an architectural call), Claude plans before building. If something goes sideways mid-task, it stops and re-plans instead of pushing through. Kills the \"Claude runs off and does the wrong thing\" risk before it starts."
+    },
+    {
+     "block_id": "355daecf-ce6b-8082-bce9-f47e0d60a4db",
+     "type": "bullet",
+     "depth": 2,
+     "text": "Subagent-first orchestration. The main context window is sacred. It's for decisions and talking to me. Anything grunt work (reading 3+ files, broad searches, running tests, producing intermediate analysis) gets delegated to subagents, and their results flow back as summaries, not raw output. This is the single biggest unlock for long-session work, because it stops the main context from getting polluted with tool output."
+    },
+    {
+     "block_id": "355daecf-ce6b-800c-aceb-e70a20317a5d",
+     "type": "bullet",
+     "depth": 2,
+     "text": "Obsidian as the second brain. My vault is the single source of truth for every bit of business context (brand guidelines, strategy docs, meeting notes, client info, decisions). Every workspace loads the relevant bits via @imports at session start, so context flows in automatically."
+    },
+    {
+     "block_id": "355daecf-ce6b-8029-aaf1-c543e30bc242",
+     "type": "bullet",
+     "depth": 2,
+     "text": "Verification before done. Nothing is complete until it's proven to work. Run the tests, check the logs, demonstrate correctness. \"Would a staff engineer approve this?\" is the internal check before anything gets marked done. Kills the \"ship it and see\" instinct."
+    },
+    {
+     "block_id": "355daecf-ce6b-8074-97b9-f28905fb9744",
+     "type": "bullet",
+     "depth": 2,
+     "text": "Boil the Ocean. The standard isn't \"good enough,\" it's \"holy shit, that's done.\" Stole this from Garry Tan"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-806c-a9e1-e725c958ba8c",
+     "type": "bullet",
+     "depth": 1,
+     "text": "system prompt for a project, reads before each answer"
+    },
+    {
+     "block_id": "342daecf-ce6b-8063-b2f5-d3a6405812a6",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Routing file - CLAUDE.md should be a routing file, not a knowledge dump. Keep it under 150 lines. Point to .claude/rules/*.md for detailed specs and docs/ for architecture. Otherwise it gets so long that Claude skims it and misses the important stuff."
+    },
+    {
+     "block_id": "342daecf-ce6b-809b-a284-f79fe3cb064e",
+     "type": "bullet",
+     "depth": 1,
+     "text": "auto-compaction - at ~83.5% of the 200K token window - is identified as the single highest-leverage skill for effective usage"
+    },
+    {
+     "block_id": "33bdaecf-ce6b-80ca-a779-f2c68b972584",
+     "type": "bullet",
+     "depth": 1,
+     "text": "folder structure and where it finds files, frameworks we are using, what end goal is"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-8091-864e-d751c06ab1b3",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Build a validation loop - Build, test, compile commands inside CLAUDE.md. Claude self-corrects when it can validate its own output. Without this, it hallucinates fixes."
+    },
+    {
+     "block_id": "32cdaecf-ce6b-80ca-8184-c125dc5ee2d4",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Never manually edit rules - \"Update the rules so we never do this again.\" One sentence. Claude maintains its own CLAUDE.md"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-801e-b17a-d6c3b41119c8",
+     "type": "bullet",
+     "depth": 1,
+     "text": "update constantly - update CLAUDE.md every time the CC makes a mistake"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-807f-ac0b-e8b700a66864",
+     "type": "bullet",
+     "depth": 1,
+     "text": "press the # key while working - will add instructions to your CLAUDE.md automatically"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-807c-9e58-e72c2ad79e2a",
+     "type": "bullet",
+     "depth": 1,
+     "text": "/init - go through everything we have done and then CC would create CLAUDE.md file"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-800a-8d9c-cc1645280a3e",
+     "type": "bullet",
+     "depth": 1,
+     "text": "keep under 200 lines and only important information/context, bloats your context window, only add what's unique to a project."
+    },
+    {
+     "block_id": "32cdaecf-ce6b-8044-adf4-da56fb4b4c21",
+     "type": "bullet",
+     "depth": 1,
+     "text": "project-specific (everything part of the flow, specific/weird stuff) + include reason behind instruction (use x because we had production bugs from x)"
+    },
+    {
+     "block_id": "31adaecf-ce6b-80b4-8ef0-c362d60eec6c",
+     "type": "toggle",
+     "depth": 2,
+     "text": "CLAUDE.md based on best practice from Boris Cherny"
+    },
+    {
+     "block_id": "31adaecf-ce6b-80cb-a3c9-e3f9610e8676",
+     "type": "text",
+     "depth": 3,
+     "text": "→ 𝗪𝗼𝗿𝗸𝗳𝗹𝗼𝘄 𝗢𝗿𝗰𝗵𝗲𝘀𝘁𝗿𝗮𝘁𝗶𝗼𝗻: Mandates \"Plan Node Default\" for any task over 3 steps. Uses subagents liberally to keep the main context window clean."
+    },
+    {
+     "block_id": "31adaecf-ce6b-80fb-a9f9-dc57a9b21f6a",
+     "type": "text",
+     "depth": 3,
+     "text": "→ 𝗦𝗲𝗹𝗳-𝗜𝗺𝗽𝗿𝗼𝘃𝗲𝗺𝗲𝗻𝘁 𝗟𝗼𝗼𝗽: This is the real magic. After ANY correction, it updates a tasks/lessons .md file. You're building a compounding system where the mistake rate drops over time because it actively learns from your feedback."
+    },
+    {
+     "block_id": "31adaecf-ce6b-8094-9206-c8c4765e4dc7",
+     "type": "text",
+     "depth": 3,
+     "text": "→ 𝗩𝗲𝗿𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻 𝗕𝗲𝗳𝗼𝗿𝗲 𝗗𝗼𝗻𝗲: Can't mark a task complete without proving it works. Diffs behavior. Runs tests. Checks logs. The bar? \"Would a staff engineer approve this?\""
+    },
+    {
+     "block_id": "31adaecf-ce6b-8045-a848-f4d8d8d8becc",
+     "type": "text",
+     "depth": 3,
+     "text": "→ 𝗔𝘂𝘁𝗼𝗻𝗼𝗺𝗼𝘂𝘀 𝗕𝘂𝗴 𝗙𝗶𝘅𝗶𝗻𝗴: Zero hand-holding. Point it at failing CI tests or error logs... it just goes to work. No constant context switching from you."
+    },
+    {
+     "block_id": "31adaecf-ce6b-80c9-a4ec-d3b2b1418424",
+     "type": "text",
+     "depth": 3,
+     "text": "→ 𝗦𝘁𝗿𝗶𝗰𝘁 𝗧𝗮𝘀𝗸 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁: Forces a \"Plan First\" approach written to a todo .md with checkable items before any implementation starts."
+    },
+    {
+     "block_id": "31adaecf-ce6b-8075-919c-c29f9a3cf2f5",
+     "type": "text",
+     "depth": 3,
+     "text": "And perhaps the most important part?"
+    },
+    {
+     "block_id": "31adaecf-ce6b-80eb-bff2-e5a2f0596996",
+     "type": "text",
+     "depth": 3,
+     "text": "It forces the AI to prioritize simplicity, find root causes instead of temporary fixes, and minimize the blast radius of every change. Senior developer standards. Not shortcuts."
+    }
+   ],
+   "Security and passwords": [
+    {
+     "block_id": "34fdaecf-ce6b-808d-acd1-d611585c533b",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Security & Passwords"
+    },
+    {
+     "block_id": "34fdaecf-ce6b-803b-aaa3-fa0ebb53a42f",
+     "type": "bullet",
+     "depth": 1,
+     "text": "keep secrets in 1Password for portability, and also maintain project-specific .env organization"
+    }
+   ],
+   "Context": [
+    {
+     "block_id": "32cdaecf-ce6b-8021-a6b5-c233837dac61",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Context"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-803b-a617-c19ca91f2bf6",
+     "type": "bullet",
+     "depth": 1,
+     "text": "/clear between features - Old context contaminates new tasks. One feature per session. Start clean or pay the token tax."
+    },
+    {
+     "block_id": "32cdaecf-ce6b-80f3-95dd-cd4a8b82dc4b",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Audit with /context regularly - MCPs destroy your token budget. /context shows the biggest offenders. Disable what you don't need. Most engineers never check this."
+    },
+    {
+     "block_id": "31ddaecf-ce6b-80c6-8ccc-c371eae36adc",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Compact aggressively (~50%) for multi-file coding, for linear work and workflows unly unless CC forgetting and repeating mistakes"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-806c-8475-c496d27cf0ac",
+     "type": "bullet",
+     "depth": 1,
+     "text": "at 20-40% context usage quality of the output starts to chip away, once dropping more context makes it worse, not better"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-80ba-b293-eebbae085d1f",
+     "type": "bullet",
+     "depth": 1,
+     "text": "scope conversations - one conversation per feature or task"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-80be-9601-fb7d6e925348",
+     "type": "bullet",
+     "depth": 1,
+     "text": "Use external memory - complex = Claude write plans and progress to actual files ( SCRATCHPAD.md or plan.md), persist across sessions, if hierarchy system of files = keep on top"
+    },
+    {
+     "block_id": "32cdaecf-ce6b-8078-bb14-f74a3a377ea3",
+     "type": "bullet",
+     "depth": 1,
+     "text": "copy-paste reset - context bloated > copy everything from terminal > run /compact to get summary, /clear the context and start fresh"
+    }
+   ],
+   "Hooks": [
+    {
+     "block_id": "341daecf-ce6b-8016-a95a-f1f7c38ecaa7",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Hooks"
+    },
+    {
+     "block_id": "342daecf-ce6b-802d-953c-d25e12a5c59d",
+     "type": "bullet",
+     "depth": 1,
+     "text": "use hooks (not CLAUDE.md) for enforcement since instructions get \"forgotten\" in long context"
+    },
+    {
+     "block_id": "342daecf-ce6b-80bb-a72b-f82639c5e0d3",
+     "type": "bullet",
+     "depth": 1,
+     "text": "leverage anti-rationalization Stop hooks to prevent Claude from rationalizing incomplete work"
+    }
+   ],
+   "Personal assistant": [
+    {
+     "block_id": "342daecf-ce6b-8047-b78c-ee5fcb393839",
+     "type": "toggle",
+     "depth": 0,
+     "text": "Personal assistant"
+    },
+    {
+     "block_id": "342daecf-ce6b-805e-b2ab-d45d0cc696a6",
+     "type": "text",
+     "depth": 2,
+     "text": "Instead of one big CLAUDE.md, I split into .claude/rules/memory-*.md files - profile (facts about me), preferences (how I like things done), decisions (past choices for consistency), and sessions (rolling summary of recent work). Claude Code auto-loads everything in .claude/rules/ so it's always in context without bloating the main CLAUDE.md.",
+     "entry_id": "c24961d1"
+    },
+    {
+     "block_id": "342daecf-ce6b-8022-86be-d4a06f0f6fc5",
+     "type": "text",
+     "depth": 2,
+     "text": "Enforcement: CLAUDE.md has a MANDATORY section telling Claude to update memory files as it goes, not at the end. The problem is Claude \"forgets\" instructions mid-session, so I added a Stop hook that checks if learning-likely files changed and reminds to capture anything new. Belt and suspenders.",
+     "entry_id": "c24961d1"
+    },
+    {
+     "block_id": "342daecf-ce6b-8074-95a9-c8d99450b7c1",
+     "type": "code",
+     "depth": 2,
+     "text": "### Auto-Update Memory (MANDATORY)\n\n**Update memory files AS YOU GO, not at the end.** When you learn something new, update immediately.\n\n| Trigger | Action |\n|---------|--------|\n| User shares a fact about themselves | → Update `memory-profile.md` |\n| User states a preference | → Update `memory-preferences.md` |\n| A decision is made | → Update `memory-decisions.md` with date |\n| Completing substantive work | → Add to `memory-sessions.md` |\n\n**Skip:** Quick factual questions, trivial tasks with no new info.\n\n**DO NOT ASK. Just update the files when you learn something.**",
+     "language": "plain text",
+     "entry_id": "c24961d1"
+    },
+    {
+     "block_id": "342daecf-ce6b-803c-bffb-eb0804a6c820",
+     "type": "text",
+     "depth": 2,
+     "text": "The key lines are \"AS YOU GO, not at the end\" and \"DO NOT ASK.\" Without both of those it tends to either forget or ask permission every time.",
+     "entry_id": "c24961d1"
+    },
+    {
+     "block_id": "342daecf-ce6b-80db-87b7-f2899fe17de8",
+     "type": "text",
+     "depth": 2,
+     "text": "2. Stop hook (settings.json → hooks.Stop):",
+     "entry_id": "c24961d1"
+    },
+    {
+     "block_id": "342daecf-ce6b-8085-b1e9-fab43a4f4d0d",
+     "type": "code",
+     "depth": 2,
+     "text": "#!/bin/bash\nCONTEXT=$(cat)\n\nSTRONG_PATTERNS=\"fixed|workaround|gotcha|that's wrong|check again|we already|should have|discovered|realized|turns out\"\nWEAK_PATTERNS=\"error|bug|issue|problem|fail\"\n\nif echo \"$CONTEXT\" | grep -qiE \"$STRONG_PATTERNS\"; then\ncat << 'EOF'\n{\n\"decision\": \"approve\",\n\"systemMessage\": \"This session involved fixes or discoveries. Consider running /reflect to capture learnings in project docs.\"\n}\nEOF\nelif echo \"$CONTEXT\" | grep -qiE \"$WEAK_PATTERNS\"; then\necho '{\"decision\":\"approve\",\"systemMessage\":\"If you learned something non-obvious this session, run /reflect to update docs.\"}'\nelse\necho '{\"decision\": \"approve\"}'\nfi",
+     "language": "plain text",
+     "entry_id": "c24961d1"
+    },
+    {
+     "block_id": "342daecf-ce6b-80e3-a5e5-ff1306248a16",
+     "type": "text",
+     "depth": 2,
+     "text": "This runs when a session ends. It pattern-matches the conversation for signals that learning happened (corrections, discoveries, workarounds) and nudges Claude to write them down. It's a safety net - the CLAUDE.md instruction handles ~90% of it, but the hook catches sessions where it forgot.",
+     "entry_id": "c24961d1"
+    },
+    {
+     "block_id": "342daecf-ce6b-80b7-974d-cd71b52e9bb7",
+     "type": "text",
+     "depth": 2,
+     "text": "The memory files themselves live in .claude/rules/ so they're auto-loaded as context every session. No RAG, no embeddings - just flat markdown files that Claude reads on startup and edits in-place.",
+     "entry_id": "c24961d1"
+    },
+    {
+     "block_id": "342daecf-ce6b-80a3-b3c8-c184829e7aef",
+     "type": "toggle",
+     "depth": 1,
+     "text": "MCP - connecting tools"
+    },
+    {
+     "block_id": "342daecf-ce6b-80a7-aa05-f5f48282b27e",
+     "type": "text",
+     "depth": 2,
+     "text": "MCP: Biggest unlock for me was connecting tools that Claude can't reach natively. Browser automation for research, Google Workspace for email/calendar, Reddit for monitoring - turns Claude Code from a coding tool into an actual assistant."
+    },
+    {
+     "block_id": "342daecf-ce6b-80f9-b612-ef32ff2a6d30",
+     "type": "toggle",
+     "depth": 1,
+     "text": "CLAUDE.md as routing file"
+    },
+    {
+     "block_id": "342daecf-ce6b-8091-816d-d89ad5a3cdc4",
+     "type": "text",
+     "depth": 2,
+     "text": "The thing most people miss: CLAUDE.md should be a routing file, not a knowledge dump. Keep it under 150 lines. Point to .claude/rules/*.md for detailed specs and docs/ for architecture. Otherwise it gets so long that Claude skims it and misses the important stuff."
+    }
+   ]
+  }
+ }
+}

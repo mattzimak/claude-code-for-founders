@@ -1,0 +1,11 @@
+# python
+__pycache__/
+*.pyc
+# local scratch (never commit raw Notion dumps or private reports)
+*.local.*
+.tree-cache.json
+# os
+.DS_Store
+# secrets never live here
+.env
+.env.*

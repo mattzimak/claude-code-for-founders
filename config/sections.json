@@ -1,0 +1,76 @@
+{
+  "_about": "Section order and blurbs for README.md. Names must match the 'section' values written by the Notion sync (data/links.csv, data/notes.json). kind: links = link entries only, notes = field notes only, mixed = both. min_entries counts rendered items (entries plus notes) per section; tools/lint.py fails below it.",
+  "min_entries": 3,
+  "sections": [
+    {
+      "name": "Learn",
+      "kind": "links",
+      "blurb": "Videos and threads that taught me how Claude Code actually works - start here if you are new to it."
+    },
+    {
+      "name": "Agent teams and subagents",
+      "kind": "mixed",
+      "blurb": "How I split work between subagents, and the two setups worth copying."
+    },
+    {
+      "name": "Prompting",
+      "kind": "notes",
+      "blurb": "My own prompt patterns for Fable 5 - copy them as they are."
+    },
+    {
+      "name": "Skills",
+      "kind": "links",
+      "blurb": "The skills I install, grouped by what they are for. Star counts and licenses come from GitHub and are refreshed weekly.",
+      "subsections": [
+        "General",
+        "Token burn & models",
+        "Webdesign taste skills",
+        "Webdesign dev skills",
+        "Webdesign MCP & UI elements",
+        "Project management",
+        "Development",
+        "Research",
+        "Image & Video Editing",
+        "Marketing - Content & Writing",
+        "Marketing - Ads & SEO"
+      ]
+    },
+    {
+      "name": "Collections",
+      "kind": "mixed",
+      "blurb": "Lists and directories I go back to when I need something I do not have yet."
+    },
+    {
+      "name": "Field notes",
+      "kind": "mixed",
+      "blurb": "Working rules I keep in Notion and refine as Claude Code changes - CLAUDE.md, context, hooks, structure, effort.",
+      "subsections": [
+        "General best practices",
+        "Plan vs bypass mode",
+        "Effort",
+        "Prompting basics",
+        "Structure",
+        "CLAUDE.md",
+        "Security and passwords",
+        "Context",
+        "Hooks",
+        "Personal assistant"
+      ]
+    },
+    {
+      "name": "Tools and memory",
+      "kind": "links",
+      "blurb": "Memory plugins, usage meters and small utilities around Claude Code."
+    },
+    {
+      "name": "Prompt sources",
+      "kind": "links",
+      "blurb": "Posts and threads I mined for prompts worth stealing."
+    },
+    {
+      "name": "n8n with Claude Code",
+      "kind": "links",
+      "blurb": "Building n8n workflows from Claude Code - the MCP server and skills that make it work."
+    }
+  ]
+}
