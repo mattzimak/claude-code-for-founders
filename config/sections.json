@@ -68,5 +68,6 @@
       "blurb": "Building n8n workflows from Claude Code - the MCP server and skills that make it work.",
       "min_entries": 2
     }
-  ]
+  ],
+  "start_here_max": 12
 }

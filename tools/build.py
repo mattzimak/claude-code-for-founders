@@ -408,10 +408,14 @@ def build(notes_file=None):
     # Start here
     start = [e for e in entries if e["why"] or (e["rating"] and e["rating"].isdigit() and int(e["rating"]) >= 8)]
     start.sort(key=lambda e: (-(int(e["rating"]) if e["rating"].isdigit() else 0), e["name"].casefold()))
+    # config/sections.json "start_here_max": keep the section short; 0 or missing = no cap
+    start_max = int(config.get("start_here_max", 0) or 0)
+    if start_max > 0 and len(start) > start_max:
+        start = start[:start_max]
     start_lines = []
     if start:
         headings.append("Start here")
-        start_lines = ["## Start here", "", "What I would send a founder who has one evening: my highest-rated picks and the entries I wrote a reason for.", ""]
+        start_lines = ["## Start here", "", "What I would send a founder who has one evening: my highest-rated picks and the first entries I wrote a reason for. The full list follows.", ""]
         start_lines += [entry_line(e, with_section=True) for e in start]
 
     known = {s["name"] for s in cfg_sections}
