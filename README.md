@@ -94,6 +94,7 @@ How I split work between subagents, and the two setups worth copying.
 
 My own prompt patterns for Fable 5 - copy them as they are.
 
+- [Claude Code SEO Prompts](https://www.instagram.com/p/DYdGvacErNf) - 5 SEO prompts from @youraicompass, shared as an Instagram post.
 - Fable 5 can report a step as done before verifying it, to fix, insert always this prompt:
   ```text
   Before reporting progress, audit each claim against a tool result from this session.

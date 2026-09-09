@@ -12,7 +12,7 @@ Source page: `2f6daecfce6b80088d45ca8548bba01b` - generated 2026-09-09. Block id
   - Field notes / Hooks: 1
   - Field notes / Personal assistant: 1
   - Learn: 9
-  - Prompt sources: 1
+  - Prompting: 1
   - Skills / Development: 15
   - Skills / General: 11
   - Skills / Image & Video Editing: 9
@@ -65,7 +65,7 @@ Source page: `2f6daecfce6b80088d45ca8548bba01b` - generated 2026-09-09. Block id
 - `Security & Passwords` -> notes -> Field notes / Security and passwords
 - `Optimizing Token Burn` -> links -> Tools and memory
 - `Context` -> links+notes -> Field notes / Context
-- `Prompts` -> links -> Prompt sources
+- `Prompts` -> links -> Prompting
 - `Hooks` -> links+notes -> Field notes / Hooks
 - `Personal assistant` -> links+notes -> Field notes / Personal assistant
 - `Useful tools` -> links -> Tools and memory
@@ -247,18 +247,18 @@ Blocks forced private by config (private_block_ids):
   - https://www.instagram.com/p/DaqH6G0kn5P (39cdaecf-ce6b-80a3-acd8-de81e841c9bf, Learn)
   - https://www.instagram.com/p/DZzbZzVCCV-?img_index=1 (38fdaecf-ce6b-80cc-9e31-fe5dbf1403a2, Learn)
   - https://www.instagram.com/p/DaA-8wLE2NX (38edaecf-ce6b-80b3-98e6-e79c20db7b22, Learn)
-  - https://www.instagram.com/p/DV9_kEmEVxM?img_index=2 (326daecf-ce6b-809a-9878-d097d46d9df4, Prompt sources)
-  - https://x.com/cyrilxbt/status/2042980564194521176 (342daecf-ce6b-8009-ab20-fd4ebaa8e1ef, Prompt sources)
-  - https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1 (32cdaecf-ce6b-805a-94d9-fd0feb2bdbe8, Prompt sources)
-  - https://www.instagram.com/p/DWHfrCHGc6r (336daecf-ce6b-80b0-8b59-d866a6c29f01, Prompt sources)
-  - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949, Prompt sources)
+  - https://www.instagram.com/p/DV9_kEmEVxM?img_index=2 (326daecf-ce6b-809a-9878-d097d46d9df4, Prompting)
+  - https://x.com/cyrilxbt/status/2042980564194521176 (342daecf-ce6b-8009-ab20-fd4ebaa8e1ef, Prompting)
+  - https://www.threads.com/@iamkhanphd/post/DV8kMGKDrm8?slof=1 (32cdaecf-ce6b-805a-94d9-fd0feb2bdbe8, Prompting)
+  - https://www.instagram.com/p/DWHfrCHGc6r (336daecf-ce6b-80b0-8b59-d866a6c29f01, Prompting)
+  - https://www.instagram.com/p/DWfCQdLEjDL (337daecf-ce6b-80f0-b94d-e77edfd02949, Prompting)
   - https://codexbar.app (349daecf-ce6b-80db-a56d-c2f149efc38c, Tools and memory)
 - email-tracking-redirect: 2
   - elinkb7e.mail.aiwithremy.com (355daecf-ce6b-803a-aedc-e25f91ddd717, Field notes)
   - elinkb7e.mail.aiwithremy.com (355daecf-ce6b-80a2-8165-cf3cfff4d2b2, Tools and memory)
 - google-docs: 2
-  - docs.google.com (32cdaecf-ce6b-80fd-868d-f8e5a84f5f19, Prompt sources)
-  - docs.google.com (326daecf-ce6b-809a-9878-d097d46d9df4, Prompt sources)
+  - docs.google.com (32cdaecf-ce6b-80fd-868d-f8e5a84f5f19, Prompting)
+  - docs.google.com (326daecf-ce6b-809a-9878-d097d46d9df4, Prompting)
 - google-drive: 3
   - drive.google.com (39ddaecf-ce6b-80e1-9d16-d41b888217e6, Skills)
   - drive.google.com (3a9daecf-ce6b-8055-9653-dc70f96cb6cf, Skills)
@@ -371,4 +371,4 @@ Blocks forced private by config (private_block_ids):
 
 Refreshed by every `python3 tools/lint.py` run. Each line needs a human decision: fix it in `data/overrides.json` (name, description, url) or change the source in Notion, then re-sync.
 
-- section 'Prompt sources' exists in data/ but not in config/sections.json (not rendered)
+- none, lint passes
