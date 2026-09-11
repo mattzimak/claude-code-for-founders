@@ -514,7 +514,10 @@ def build(notes_file=None):
         if name not in known and name not in stats["unlisted_sections"]:
             stats["unlisted_sections"].append(name)
 
-    headings += ["How this list is built", "License"]
+    # Trailing sections = the static "## " headings the template carries after {{sections}},
+    # so a repo can add its own (e.g. "Other useful lists") and still get a correct TOC.
+    tail = re.findall(r"^## (.+)$", template.split("{{sections}}")[-1], re.M)
+    headings += tail
     anchors = dict(zip(headings, anchors_for(headings)))  # duplicate names get their first anchor; see toc below
     ordered_anchors = anchors_for(headings)
     toc = []
@@ -528,8 +531,8 @@ def build(notes_file=None):
         for sub in rec["subs_readme"]:
             toc.append("  - [%s](#%s)" % (sub, ordered_anchors[pos]))
             pos += 1
-    toc.append("- [How this list is built](#%s)" % ordered_anchors[pos])
-    toc.append("- [License](#%s)" % ordered_anchors[pos + 1])
+    for i, name in enumerate(tail):
+        toc.append("- [%s](#%s)" % (name, ordered_anchors[pos + i]))
 
     checked = [enrich[e["id"]] for e in entries if e["id"] in enrich and enrich[e["id"]].get("http_status") is not None]
     dead = sum(1 for r in checked if r.get("status") == "dead")

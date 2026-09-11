@@ -14,6 +14,16 @@ Descriptions are my own notes where I wrote one. Where I only saved a link, the 
 
 {{sections}}
 
+## Other useful lists
+
+This list is deliberately short and opinionated. When you want the exhaustive version, these are the ones I actually open:
+
+- [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - the reference directory for Claude Code itself: slash commands, hooks, status lines, tooling, plugins. Generated from a curated CSV, so it stays consistent. Go here when you want everything that exists, not just what one person kept.
+- [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) - skills as a category, with the skill folders committed in the repo so you can read a SKILL.md before installing it. Useful for seeing how other people structure a skill.
+- [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) - a large catalogue of subagent definitions by domain. Worth a skim when you are designing an agent team and want prior art for the role split.
+
+The difference is intent, not quality: those are directories of what exists, this is a record of what I kept after using it. If a link appears in both, theirs will be more complete and mine will tell you whether it survived contact with real work.
+
 ## How this list is built
 
 The source is a private Notion page where I keep notes while I work. A sync script in my workspace (`awesome-sync.py`, not in this repo) reads that page through the Notion API and keeps only the sections that are explicitly mapped as public - everything else stays private by default. It canonicalizes every URL (https only, tracking parameters dropped, `youtu.be` and `twitter.com` rewritten), drops links to private places (Notion, Google Drive, course platforms), scans every string for secrets and private names, and writes three files: `data/links.csv` (one row per link), `data/notes.json` (the field notes) and `data/_report.md` (what was excluded and why).

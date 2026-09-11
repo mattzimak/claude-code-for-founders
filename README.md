@@ -38,6 +38,7 @@ Descriptions are my own notes where I wrote one. Where I only saved a link, the 
   - [Personal assistant](#personal-assistant)
 - [Tools and memory](#tools-and-memory)
 - [n8n with Claude Code](#n8n-with-claude-code)
+- [Other useful lists](#other-useful-lists)
 - [How this list is built](#how-this-list-is-built)
 - [License](#license)
 
@@ -472,6 +473,16 @@ Building n8n workflows from Claude Code - the MCP server and skills that make it
 
 - [czlonkowski/n8n-mcp](https://github.com/czlonkowski/n8n-mcp) - n8n-MCP: A Model Context Protocol (MCP) server that gives Claude Code deep, structured access to n8n's vast library of workflow automation nodes, properties, operations, and documentation. · 22k stars · MIT · updated 2026-09
 - [czlonkowski/n8n-skills](https://github.com/czlonkowski/n8n-skills) - n8n skillset for Claude Code to build flawless n8n workflows. · 6.2k stars · MIT · updated 2026-09 · also: [skills.sh](https://skills.sh/czlonkowski/n8n-skills)
+
+## Other useful lists
+
+This list is deliberately short and opinionated. When you want the exhaustive version, these are the ones I actually open:
+
+- [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - the reference directory for Claude Code itself: slash commands, hooks, status lines, tooling, plugins. Generated from a curated CSV, so it stays consistent. Go here when you want everything that exists, not just what one person kept.
+- [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) - skills as a category, with the skill folders committed in the repo so you can read a SKILL.md before installing it. Useful for seeing how other people structure a skill.
+- [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) - a large catalogue of subagent definitions by domain. Worth a skim when you are designing an agent team and want prior art for the role split.
+
+The difference is intent, not quality: those are directories of what exists, this is a record of what I kept after using it. If a link appears in both, theirs will be more complete and mine will tell you whether it survived contact with real work.
 
 ## How this list is built
 
