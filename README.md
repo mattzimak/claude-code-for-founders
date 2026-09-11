@@ -1,8 +1,8 @@
-# Claude Code field guide
+# Claude Code handbook
 
 135 entries · last verified 2026-09-09 · 135 links checked · 0 dead
 
-One founder's field guide to running a company on Claude Code: the skills I install, the setups I copied, the rules I keep, and the people worth learning from. It is not a directory of everything that exists - if something is here, it earned its place in real work. Suggest a link by opening an issue (see [CONTRIBUTING.md](CONTRIBUTING.md)).
+One founder's handbook for running a company on Claude Code: the skills I install, the setups I copied, the rules I keep, and the people worth learning from. It is not a directory of everything that exists - if something is here, it earned its place in real work. Suggest a link by opening an issue (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 
 Descriptions are my own notes where I wrote one. Where I only saved a link, the description is the repository's or the post's own summary. Ratings like `(Matt: 8/10)` are my personal scores.
 
