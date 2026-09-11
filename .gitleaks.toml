@@ -1,6 +1,6 @@
 # gitleaks configuration - uses the default rule set shipped with gitleaks.
 # Run locally: gitleaks protect --staged   (pre-commit)   or   gitleaks detect   (history)
-title = "claude-code-for-founders"
+title = "claude-code-field-guide"
 
 [extend]
 useDefault = true
